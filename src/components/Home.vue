@@ -1,17 +1,18 @@
 <template>
   <div id="home">
+    <video-banner/>
     <nav-bar></nav-bar>
 
     <div class="container-fluid">
       <banner></banner>
-      <what-is-nkn></what-is-nkn>
-      <!--<goals-of-nkn></goals-of-nkn>-->
-      <!--<nkn-features></nkn-features>-->
-      <technical-highlights></technical-highlights>
-      <road-map></road-map>
-      <team></team>
+      <!--<introduction></introduction>-->
+      <why id="nkn-overview-container"></why>
+      <what></what>
+      <how></how>
+      <e-a></e-a>
+      <news id="nkn-news-container"></news>
+      <team id="nkn-team-container"></team>
       <!--<investor></investor>-->
-      <news></news>
       <slogan></slogan>
       <the-footer></the-footer>
       <nav-bottom></nav-bottom>
@@ -22,31 +23,33 @@
 <script>
   import NavBar from './NavBar'
   import Banner from './Banner'
-  import GoalsOfNkn from './GoalsOfNkn'
-  import NknFeatures from './NknFeatures'
-  import TechnicalHighlights from './TechnicalHighlights'
-  import RoadMap from './RoadMap'
+  import Introduction from './Introduction'
+  import Why from './highlights/Why'
+  import What from './highlights/What'
+  import How from './highlights/How'
+  import EA from './highlights/EA'
+  import News from './News'
   import Team from './Team'
   import Investor from './Investor'
-  import WhatIsNkn from './WhatIsNkn'
-  import News from './News'
   import Slogan from './Slogan'
   import TheFooter from './TheFooter'
   import NavBottom from './NavBottom'
+  import VideoBanner from "./VideoBanner";
 
 	export default {
     name: "home",
     components: {
-      NavBar,
+        VideoBanner,
+        NavBar,
       Banner,
-      WhatIsNkn,
-      GoalsOfNkn,
-      NknFeatures,
-      TechnicalHighlights,
-      RoadMap,
-      Team,
-      Investor,
+      Introduction,
+      Why,
+      What,
+      How,
+      EA,
       News,
+      Team,
+      // Investor,
       Slogan,
       TheFooter,
       NavBottom
