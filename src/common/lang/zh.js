@@ -296,8 +296,10 @@ module.exports = {
     a11: '当然，我们很乐意组建强大而且庞大社区。 我们并不是只关注让社区变得更大，更重要的是更高质量的社区。 NKN社区将促进创新，应用，改进和扩展NKN网络，参与NKN核心软件和应用开发，支持新用户。',
   },
   calendar: {
-    first: '天',
-    second: '开源核心代码'
+    title: '代码开源还有',
+    unitDays: "天",
+    unitHours: "小时",
+    unitMinutes: "分钟",
   },
   footer: {
     home: '主页',
@@ -331,7 +333,7 @@ module.exports = {
   },
   navBottom: {
     gotIt: 'Got it',
-    txt: 'NKN将于中国时间2018年5月28日登陆全球知名交易平台<a target="_blank" href="https://gateio.io/article/16464">Gate.io</a>, 并于当天中午12点正式开通交易。'
+    txt: 'NKN已于2018年5月28日上线Gate（<a target="_blank" href="https://gateio.io/article/16464">www.gateio.io</a>）并开通NKN/USDT 和 NKN/ETH交易对。'
   },
   copyRight: 'Copyright © 2017-2018 NKN    |    All rights reserved'
 }
