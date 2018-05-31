@@ -244,8 +244,10 @@ module.exports = {
     a11: 'Absolutely, we would love to form a big community. We are not focusing only on making the community bigger, but more importantly a higher quality community. That community will embrace technology, use, improve, and expand NKN network, participate in NKN core software and application development, support new users.',
   },
   calendar: {
-    first: 'Days',
-    second: 'to Open Source'
+    title: 'Open Source Soon',
+    unitDays: "DAYS",
+    unitHours: "HOURS",
+    unitMinutes: "MINUTES",
   },
   footer: {
     home: 'Home',
@@ -279,7 +281,7 @@ module.exports = {
   },
   navBottom: {
     gotIt: 'Got it',
-    txt: 'NKN will be listed on one of the leading crypto asset exchanges <a target="_blank" href="https://gate.io/article/16464">Gate.io</a> at 4:00 a.m UTC on May 28th, 2018'
+    txt: 'NKN has been listed on Gate (<a target="_blank" href="https://gate.io/article/16464">www.gate.io</a>) on May 28th, 2018. The trading pairs of NKN/USDT and NKN/ETH are available for transactions.'
   },
   copyRight: 'Copyright © 2017-2018 NKN    |    All rights reserved'
 }
