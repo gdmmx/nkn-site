@@ -1,50 +1,47 @@
 <template>
-  <router-view></router-view>
+  <router-view/>
 </template>
 
 <script>
-  import LangStorage from './helpers/lang'
 
   export default {
     name: 'app',
     created() {
-      this.getIp(function (info, self) {
-        let locale = 'en'
-
-        if (info.country === '中国') {
-          locale = 'zh'
-        }
-
-        if (locale !== self.$i18n.locale) {
-          self.$i18n.locale = locale
-          LangStorage.setLang(self.$i18n.locale)
-        }
-      })
+      this.getIp( )
     },
+
     methods: {
-      getIp(cb) {
+      getIp() {
         let script = document.createElement("script"),
           s = document.getElementsByTagName("script")[0];
 
-        script.src = "https://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js";
+        script.src = "http://ip-api.com/json/?callback=getCountryCode";
         s.parentNode.insertBefore(script, s);
 
         let self = this
         let it = setInterval(function () {
-          if (typeof(remote_ip_info) !== 'undefined') {
-            try {
-              cb(remote_ip_info, self);
-            } catch (error) {
-              console.log(error)
-            }
-
-            clearInterval(it);
-            it = null;
+          if("Index" !== self.$route.name) {
+            return
           }
+
+          if("Home" !== self.$route.name && "Index" !== self.$route.name) {
+            return
+          }
+
+
+          let target = '/home/en/'
+          if (typeof(userContryCodeRouterMap[getCountryCode]) !== 'undefined') {
+            let target = userContryCodeRouterMap[getCountryCode]
+          }
+
+          self.$router.push(target)
+          clearInterval(it);
+          it = null;
         }, 100);
       }
     }
   }
+
 </script>
 
 <style>

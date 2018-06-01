@@ -261,6 +261,7 @@ module.exports = {
     gitHub: 'GitHub',
     introduction: 'Introduction',
     whitepaper: 'Whitepaper',
+    icon: 'Logo download',
     contact: {
       content: 'Further information upon request :',
       email: 'contact@nkn.org'

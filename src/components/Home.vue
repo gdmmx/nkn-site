@@ -1,22 +1,22 @@
 <template>
   <div id="home">
     <video-banner/>
-    <nav-bar></nav-bar>
+    <nav-bar/>
 
     <div class="container-fluid">
-      <banner></banner>
+      <banner/>
       <!--<introduction></introduction>-->
-      <why id="nkn-overview-container"></why>
-      <what></what>
-      <how></how>
-      <e-a></e-a>
-      <news id="nkn-news-container"></news>
-      <team id="nkn-team-container"></team>
-      <partners-and-alliance></partners-and-alliance>
+      <why id="nkn-overview-container"/>
+      <what/>
+      <how/>
+      <e-a/>
+      <news id="nkn-news-container"/>
+      <team id="nkn-team-container"/>
+      <partners-and-alliance/>
       <!--<investor></investor>-->
-      <slogan></slogan>
-      <the-footer></the-footer>
-      <nav-bottom></nav-bottom>
+      <slogan/>
+      <the-footer/>
+      <nav-bottom/>
     </div>
   </div>
 </template>
@@ -38,12 +38,16 @@
   import VideoBanner from "./VideoBanner";
   import PartnersAndAlliance from "./PartnersAndAlliance";
 
-	export default {
+  let homeData = {
+    scrollToComponents: ""
+  }
+
+  export default {
     name: "home",
     components: {
       PartnersAndAlliance,
       VideoBanner,
-        NavBar,
+      NavBar,
       Banner,
       Introduction,
       Why,
@@ -56,6 +60,35 @@
       Slogan,
       TheFooter,
       NavBottom
+    },
+    methods: {
+      isHome() {
+        return ("Home" === this.$route.name || "Index" === this.$route.name)
+      },
+      scrollTo(targetId) {
+        if(!this.isHome()) {
+          return
+        }
+
+        let $target = $("#" + targetId)
+        $(window).scrollTop($target.offset().top)
+      },
+    },
+    mounted() {
+      if("" !== this.scrollToComponents) {
+        this.scrollTo(this.scrollToComponents)
+      }
+    },
+    data() {
+      return homeData
+    },
+    beforeRouteEnter(to, from, next) {
+      if(to.params['scrollTo']) {
+        homeData.scrollToComponents = to.params['scrollTo']
+      } else {
+        homeData.scrollToComponents = ""
+      }
+      next()
     }
   }
 </script>

@@ -1,22 +1,23 @@
 module.exports = {
   navbar: {
-    home: '首页',
-    overview: '概述',
-    news: '新闻',
-    team: '团队',
-    docs: '文档 ',
-    introduction: '项目介绍',
-    whitepaper: '白皮书',
-    economicModel: '经济模型',
+    home: '시작페지',
+    overview: '개요',
+    news: '뉴스',
+    team: '팀',
+    docs: '문서',
+    introduction: '프로젝트소개',
+    whitepaper: 'NKN 백서',
+    economicModel: '경제 모델',
     faq: 'FAQ',
     language: 'English',
     english: 'English',
-    chinese: '中文'
+    chinese: '中文',
+    korean: '한국어',
   },
   banner: {
-    introduction: '项目介绍',
+    introduction: '프로젝트소개',
     sourceCode: '源代码',
-    slogan: 'NKN是区块链驱动的一种开放，去中心化，社区共建共享的新型网络基础设施和生态系统。'
+    slogan: 'NKN은 블록체인을 기반으로 개발한, 탈중심화, 공동 건설하고 공유하는 새로운 네트워크 인프라 및 생태계입니다.'
   },
   whatWeDo: {
     name: '下一代互联网',
@@ -24,167 +25,167 @@ module.exports = {
   },
   why: {
     tit: 'Why',
-    name: '当前面临的问题',
+    name: '현재 인터넷의 문제',
     model1: {
-      name: '网络中立性',
-      content: '网络中立性意味着网络服务商平等对待所有使用该网络的用户，而不是根据自己的利益对服务和内容加以区别。'
+      name: '망중립성',
+      content: '망중립성은 통신망 제공사업자가 자신의 이익에 따라 서비스 및 콘텐츠를 차별하는 것이 아닌, 통신망을 사용하는 모든 사용자를 동등하게 다뤄야 하는 것을 의미합니다.'
     },
     model2: {
-      name: '资源利用率',
-      content: '网络资源分配和供需的不均衡导致网络连接和信息传输效率不够高效。'
+      name: '망 자원이용률',
+      content: '망 자원 분배 및 수요와 공급의 불균형은 네트워크 연결 및 데이터 통신 비효율을 초래합니다.'
     },
     model3: {
-      name: '软件定义网络(SDN) 的问题',
-      content: '现有SDN过度依赖中心控制容易造成单点故障，也难以根据实时流量和价格进行高效调度。'
+      name: '소프트웨어 정의 네트워크의 결함',
+      content: '현존하는 소프트웨어 정의 네트워크 (SDN)은 과도하게 중앙 통제에 의지하여 단일장애지점 문제가 생기기 쉽고, 실시간 트래픽과 가격에 따라 고효율적으로 배분하기 어렵습니다.'
     }
   },
   what: {
     tit: 'What',
-    name: '创新网络技术和商业模式',
+    name: '창의적인 네트워크 기술 및 비즈니스 모델',
     model1: {
-      name: '区块链基础设施的第三支柱',
-      content: '继以太坊区块链化计算能力，Filecoin/IPFS区块链化存储，NKN对信息基础设施的第三大支柱-网络传输进行区块链化，创建新型区块链网络生态系统。'
+      name: '블록체인 인프라의 세번째 기둥',
+      content: '이더리움의 계산능력 블록체인화, Filecoin/IPFS의 저장 블록체인화에 이어, NKN은 인터넷 인프라의 세번째 기둥인 네트워크 전송을 블록체인화하고, 새로운 블록체인 네트워크 생태계를 조성합니다.'
     },
     model2: {
-      name: '去中心化的数据传输交易所',
-      content: 'NKN是第一个去中心化的数据传输交易所，能够处理大规模基于网络传输量的小额支付，服务于百万级用户。'
+      name: '탈중심화된 데이터 전송 거래소',
+      content: 'NKN은 탈중심화한 첫 데이터 전송 거래소로, 네트워크 전송을 기반으로 한 소액결제를 대규모로 처리할 수 있으며, 수백만 명의 사용자에게 서비스를 제공합니다.'
     },
     model3: {
-      name: '去中心化的软件定义网络',
-      content: 'NKN将SDN区块链化, 它使网络运营商和企业能够根据实时性能和成本进行动态路由，降低数据传输的成本和提高整个网络的效率。'
+      name: '탈중심화한 소프트웨어 정의 네트워크',
+      content: 'NKN은 소프트웨어 정의 네트워크를 블록체인화 하였습니다. NKN은 통신망 제공사업자와 기업이 실시간 성능과 비용에 따라 동적으로 경로를 설정할 수 있게끔 하여, 데이터 전송의 비용을 절감하고, 전체 네트워크의 효율을 제고하였습니다.'
     }
   },
   how: {
     tit: 'How',
-    name: '共识，中继证明，共享激励',
+    name: '합의와 중계 증명 방식 (PoR), 공유 보상',
     model1: {
-      name: '高度可扩展的共识机制',
-      content: 'NKN借鉴元胞自动机创新实现了一种高度可扩展的共识机制（Ising model），可支持百万级节点数目的区块链及其点对点网络。'
+      name: '확장성이 뛰어난 합의',
+      content: 'NKN은 셀룰러 오토마타를 참고하여 창의적으로 확장성이 뛰어난 이징 모델을 실현했고, 수백만 개의 노드를 가지고 있는 블록체인과 동등 계층 통신망 (peer-to-peer network)을 지원합니다.'
     },
     model2: {
-      name: '中继证明',
-      content: 'PoR用有效数据传输量去衡量路由中继节点的工作量。 构造签名链来保证其可验证性，不可伪造性及不可篡改性。'
+      name: '중계 증명 방식 (PoR)',
+      content: 'PoR은 유효한 전송량으로 네트워크 라우트 중계 노드의 작업량을 계산합니다. 서명 체인 (Signature Chain)을 구축해 검증가능성과 조작불가성, 수정불가성을 보장합니다.'
     },
     model3: {
-      name: '网络资源共享激励',
-      content: 'NKN的经济模型充分调动参与者的积极性，能够有效地激励更多参与者为他人提供网络服务以获取经济回报。共建共享新型网络基础设施和生态系统。'
+      name: '네트워크 자원 공유 보상',
+      content: 'NKN의 경제 모델은 참여자의 적극성을 끌어올리기에 충분하고, 더욱 많은 참여자가 경제적 보상을 받고 다른 사람에게 네트워크 서비스를 제공하게끔 장려합니다.'
     }
   },
   ea: {
-    tit: '生态吸引力',
-    name: 'NKN不仅仅是一个“新互联网”',
+    tit: '생태계 매력',
+    name: 'NKN은 단순히 “신 인터넷”이 아닙니다.',
     model1: {
-      name: '网络漫游',
-      content: '无论何时何地， 任何设备都可以轻松接入NKN网络。'
+      name: '네트워크 로밍',
+      content: '언제 어디서나, 어떤 장비로도 NKN 네트워크에 연결할 수 있습니다.'
     },
     model2: {
-      name: '共享网络资源',
-      content: '参与者通过将闲置的网络资源分享给他人，从NKN系统中获得奖励。'
+      name: '공유 네트워크 자원',
+      content: '참여자는 사용하지 않는 네트워크 자원을 다른 사람과 공유하고 NKN시스템으로부터 보상을 받습니다.'
     },
     model3: {
-      name: '共建网络设施',
-      content: 'NKN鼓励个体及企业部署设备为其它节点提供服务，在增强网络连通性和吞吐量的同时自动结算来获益。'
+      name: '네트워크 시설 공동 건설',
+      content: 'NKN은 개인과 기업이 설비를 구축해 다른 노드에 서비스를 제공하는 것을 장려합니다. 개인과 기업은 연결성과 스루풋 (throuput)을 높임과 동시에 자동결산으로 보상을 얻습니다.'
     }
   },
   media: {
-    name: 'NKN新闻',
+    name: 'NKN 뉴스',
     twitterLoading: '加载中...',
     news: {
-      newsTit1: 'From Turbo Code to Blockchain ：',
-      newsTxt1: 'Fast forward to 2018, Yanbo and I founded the “New Kind of Network” project that intend to use blockchain technology and business model to disrupt the telecom business.',
+      newsTit1: '터보 코드에서 블록체인으로',
+      newsTxt1: '2018년, 저와 리옌보는 NKN 프로젝트를 창립했습니다. NKN 프로젝트는 블록체인 기술과 비즈니스 모델을 사용하여 기존의 통신사업을 무너뜨리고자 합니다.',
       newsTime1: 'May 8, 2018',
       newsUrl1: 'https://medium.com/nknetwork/from-turbo-code-to-blockchain-41a887121bc8',
-      newsTit2: 'Is NKN the PIED PIPER’S NEW INTERNET in Silicon Valley?',
-      newsTxt2: 'The answer is YES! We just recognized Pied Piper’s “New Internet ” concept was matching to our target! The difference is that we are already on the way to deliver it as product.',
+      newsTit2: 'NKN은 실리콘밸리에 있는 Pied Piper의 새 인터넷입니까?',
+      newsTxt2: '정답은 그렇습니다! 우리는 Pied Piper의 “새 인터넷” 개념이 우리의 목적과 일치하는 것을 발견했습니다! Pied Piper와의 차이점은, 우리는 이미 “새 인터넷”을 제품으로 전달하는 길을 가고 있다는 것입니다.',
       newsTime2: 'April 28, 2018',
       newsUrl2: 'https://medium.com/nknetwork/is-nkn-the-pied-pipers-new-internet-in-silicon-valley-77f71c525da6',
-      newsTit3: 'NKN Monthly Report, May 2018',
-      newsTxt3: 'A comprehensive project report to NKN community (4/1/2018~4/30/2018). NKN team had a great month of hard work to deliver results. ',
+      newsTit3: '당신이 NKN에 대해 알아야 할 모든 것',
+      newsTxt3: 'NKN (New Kind of Network) 프로젝트는 정말 개방되고 탈중심화된, 동적인, 안전한, 공유된, 공동 소유의 인터넷을 재구축하는 데 목표를 두고 있습니다.',
       newsTime3: 'May 4, 2018',
       newsUrl3: 'https://medium.com/nknetwork/nkn-monthly-report-may-2018-c4bffac5830f',
     },
     newsCN: {
-      newsTit1: '现代密码学之父入场区块链，和NKN一起打造未来网络',
-      newsTxt1: '最近小探了解到，非对称加密这一区块链核心技术的发明者、图灵奖获得者，有现代密码学之父之称的 Whitefield Diffe 在区块链领域有大动作，他加入了一个区块链开源项目－NKN。',
+      newsTit1: '현대 암호학의 아버지가 블록체인에 참여, NKN과 함께 미래의 네트워크를 구축',
+      newsTxt1: '블록체인의 핵심 기술인 비대칭 암호를 발명한 튜링상 수상자, 현대 암호학의 아버지 Whitefield Diffie가 블록체인 영역에서 특단의 행동을 보였다. 그는 블록체인 오픈소스 프로젝트인 NKN에 참여했다.',
       newsTime1: '2018-02-26',
       newsUrl1: 'https://36kr.com/p/5120836.html',
-      newsTit2: 'NKN：被重新定义的“区块链”网络',
-      newsTxt2: '李彦博是 Onchain 的联合创始人，具有丰富的项目开发和管理经验。他是Onchain区块链平台DNA（distribute network architecture）核心设计和开发者之一。',
+      newsTit2: 'NKN: 재정의된 “블록체인” 네트워크',
+      newsTxt2: '리옌보 (李彦博)는 Onchain 의 공동창시자로, 다양한 프로젝트 개발 및 관리 경험을 가지고 있다. 그는 Onchain의 블록체인 플랫폼인 DNA (distribute network architecture)의 핵심 설계자 및 개발자 중 한 명이다.',
       newsTime2: '2018-02-02',
       newsUrl2: 'http://www.sohu.com/a/220450794_257855',
-      newsTit3: 'NKN项目月报（2018年5月）',
-      newsTxt3: 'NKN研发团队通过这短短一个月的努力，取得了阶段性的成果。NKN开源日是重要里程碑，敬请期待。',
+      newsTit3: 'NKN프로젝트 월간 보고서 (2018년 5월)',
+      newsTxt3: 'NKN개발팀은 불과 한 달 동안의 노력으로 중간 결과를 얻었습니다. NKN 소스 오픈일은 중요한 마일스톤이 될 것입니다. 기대해주세요.',
       newsTime3: '2018-05-10',
       newsUrl3: 'https://mp.weixin.qq.com/s/jmtRx-eSouELTDoQEmuGig'
     }
   },
   team: {
-    name: '核心团队介绍',
+    name: '핵심멤버 소개',
     yanBoLi: {
-      name: '李彦博',
-      tit1: '创始人| 核心开发',
-      tit2: '前Onchain联合创始人',
-      desc1: '曾负责区块链系统“DNA”的核心设计和开发。',
-      desc2: '自由软件和开源运动倡导者， Linux 内核网络代码贡献者。',
+      name: '리옌보 (李彦博)',
+      tit1: '창시자 | 핵심 개발',
+      tit2: '전 Onchain 공동 창시자',
+      desc1: '블록체인 시스템인 DNA의 핵심 설계와 개발 담당',
+      desc2: '오픈소스 지지자, 리눅스 커널 네트워크 서브시스템 코드 컨트리뷰터 (contributor)',
       linkedin: 'https://www.linkedin.com/in/yanbo-li-b478585',
       github: 'https://github.com/dreamfly281'
     },
     bruceZLi: {
-      name: 'Zheng “Bruce” Li',
-      tit: '联合创始人| 战略与创新',
-      desc1: '曾在Google和Nokia领导多个网络技术创新项目，并成功推向市场。',
-      desc2: '网络新领域开拓者，专注于企业战略和商务发展。',
+      name: '리정(Zheng “Bruce” Li)',
+      tit: '공동창시자 | 전략과 혁신',
+      desc1: '구글과 노키아에서 창의적인 네트워크 기술 프로젝트를 담당하고, 담당 프로젝트를 성공적으로 시장에 출시',
+      desc2: '네트워크의 새로운 영역 탐험가, 회사전략 및 사업개발 전문가',
       linkedin: 'https://www.linkedin.com/in/zbruceli'
     },
     yiLunZhang: {
-      name: '张逸伦',
-      tit: '联合创始人| 核心研究和开发',
-      desc1: '加州大学圣地亚哥分校物理学博士。北京大学物理系本科。',
-      desc2: 'Cellular Automata、Ising Model、分布式信息处理系统领域专家。全栈工程师。',
+      name: '장이룬 (张逸伦)',
+      tit: '공동창시자 | 핵심 연구와 개발',
+      desc1: '캘리포니아대학교 샌디에고 캠퍼스 물리학 박사. 베이징대학교 물리학 학사.',
+      desc2: '셀룰러 오토마타, 이징모델, 분산 정보 처리 (distributed information processing) 영역 전문가. 풀스택 개발자.',
       linkedin: 'https://www.linkedin.com/in/yilun-zhang-',
       github: 'https://github.com/yilunzhang'
     },
     justinWang: {
-      name: 'Justin Wang',
-      tit: '联合创始人| 核心研究',
-      desc1: '杰出的技术专家，拥有45项国际发行和待决专利。',
-      desc2: '具有10年的Nokia，Microsoft，Ericsson产品开发经验。',
+      name: '왕잔창(Justin Wang)',
+      tit: '공동창시자 | 핵심 연구',
+      desc1: '뛰어난 기술 전문가로, 출원되거나 심사중인 국제 특허 45개 보유',
+      desc2: '노키아, 마이크로소프트, 에릭슨 제품 개발 경험 10년 보유',
       linkedin: 'https://www.linkedin.com/in/justin-wang-99b36016'
     },
     allenDixon: {
       name: 'Allen Dixon',
-      tit: '商务拓展与法务合规',
-      desc1: '擅长将技术与市场紧密对接， 创造新的商业模式。',
-      desc2: '在电信行业拥有20年以上的丰富经验，曾领导多个与Apple、Amazon和初创企业合作的项目。',
+      tit: '사업개발 및 준법감시',
+      desc1: '기술과 시장을 연결하고, 새로운 비즈니스 모델 창출 전문가',
+      desc2: '20년 이상의 풍부한 통신업계 경험을 보유하고 있으며, Apple과 Amazon, 스타트업과 협력한 프로젝트 리드',
       linkedin: 'https://www.linkedin.com/in/dixonal'
     },
     chrisWu: {
-      name: 'Chris Wu',
-      tit: '商务拓展和运营',
-      desc1: '在Qualcomm和Amazon的网络部门工作近10年，曾担任资深商务拓展和技术项目经理，具有丰富的行业经验。',
-      desc2: '与美国，以色列，印度，欧洲和中国的研发团队一起支持多个全球领先的移动网络项目。',
+      name: '우치우이 (Chris Wu)',
+      tit: '사업개발과 운영',
+      desc1: '퀄컴과 아마존의 네트워크 부서에서 10년간 일했고, 사업개발 및 기술 프로젝트 매니저 직무를 맡아, 업계 경험 풍부',
+      desc2: '미국, 이스라엘, 인도, 유럽, 중국의 개발팀과 함께 세계에서 선도하는 모바일 프로젝트 지원',
       linkedin: 'https://www.linkedin.com/in/chris-wu-36446846'
     },
     whitfieldDiffie: {
       name: 'Whitfield Diffie',
-      tit: 'NKN 顾问',
+      tit: 'NKN 고문',
       url: 'https://zh.wikipedia.org/wiki/%E6%83%A0%E7%89%B9%E8%8F%B2%E7%88%BE%E5%BE%B7%C2%B7%E8%BF%AA%E8%8F%B2',
-      introductionCryptography: '公钥密码学发明人（Diffie-Hellman）',
-      introductionTuringAward: '2015年图灵奖得主',
-      introductionTit: 'Diffie的其它奖项和荣誉：',
-      introduction1: '皇家学会会员；',
-      introduction2: '国家工程院院士；',
-      introduction3: '瑞士联邦理工学院荣誉博士学位；',
-      introduction4: '马可尼基金会成员；',
-      introduction5: '伦敦大学皇家霍洛威学院博士（Honoris Causa）；',
-      introduction6: '1981年IEEE Donald G. Fink奖论文奖；',
-      introduction7: '1997年富兰克林研究所的Louis E. Levy勋章；',
-      introduction8: 'IEEE信息理论学会Golden Jubilee技术创新奖；',
-      introduction9: '2010年IEEE Richard W. Hamming奖章。',
+      introductionCryptography: '공개키 암호학 발명자.',
+      introductionTuringAward: '2015년 투링상 수상자.',
+      introductionTit: 'Diffie 의 기타 수상내역 및 경력',
+      introduction1: '왕립학회 회원',
+      introduction2: '국가공정원 원사',
+      introduction3: '스위스취리히연방공과대학 명예박사',
+      introduction4: '마르코니 기금회 회원',
+      introduction5: '로얄홀러웨이런던대학교 박사',
+      introduction6: '1981년 IEEE Donald G. Fink상 논문상',
+      introduction7: '1997년 프랑클린연구소의  Louis E. Levy 훈장',
+      introduction8: 'IEEE 정보이론학회 Golden Jubilee 기술혁신상',
+      introduction9: '2010년 IEEE Richard W. Hamming상',
     }
   },
   partnersAndAlliance: {
-    tit: "战略伙伴和联盟"
+    tit: "파트너와 연맹"
   },
   video: {
     name: 'Video',
@@ -296,45 +297,45 @@ module.exports = {
     a11: '当然，我们很乐意组建强大而且庞大社区。 我们并不是只关注让社区变得更大，更重要的是更高质量的社区。 NKN社区将促进创新，应用，改进和扩展NKN网络，参与NKN核心软件和应用开发，支持新用户。',
   },
   calendar: {
-    title: '代码开源还有',
-    unitDays: "天",
-    unitHours: "小时",
-    unitMinutes: "分钟",
+    title: '소스 오픈까지',
+    unitDays: "일",
+    unitHours: "시",
+    unitMinutes: "분",
   },
   footer: {
-    home: '主页',
-    homepage: 'Home',
+    home: '시작페지',
+    homepage: '시작페지',
     email: 'Email',
-    community: '社区',
-    resource: '资源',
+    community: '커뮤니티',
+    resource: '자원',
     telegram: 'Telegram',
-    twitter: '推特',
+    twitter: 'Twitter',
     reddit: 'Reddit',
     gitHub: 'GitHub',
-    introduction: 'NKN项目介绍',
-    whitepaper: 'NKN项目白皮书',
-    icon: 'Logo下载',
+    introduction: 'NKN프로젝트 소개',
+    whitepaper: 'NKN 백서',
+    icon: '아이콘 다운로드',
     contact: {
-      content: '联系方式',
+      content: '연락처',
       email: 'contact@nkn.org'
     },
     focus: {
-      name: '关注',
-      joinUs: '加入我们',
-      news: '新闻',
-      blog: '博客'
+      name: '팔로우',
+      joinUs: '채용',
+      news: '뉴스',
+      blog: '블로그'
     },
     subscribe: {
-      placeholder: '您的邮箱地址',
-      btnName: '订阅',
-      noMiss: '订阅新闻邮件组，持续关注NKN',
-      success: '您已经成功订阅了NKN新闻！'
+      placeholder: '귀하의 이메일 주소',
+      btnName: '구독하기',
+      noMiss: 'NKN뉴스구독',
+      success: '너는 NKN 뉴스를 성공적으로 구독 했어!'
     },
-    wechat : '微信'
+    wechat : 'WeChat'
   },
   navBottom: {
     gotIt: 'Got it',
-    txt: 'NKN已于2018年5月28日上线Gate（<a target="_blank" href="https://gateio.io/article/16464">www.gateio.io</a>）并开通NKN/USDT 和 NKN/ETH交易对。'
+    txt: '2018년 5월 28일, NKN은 게이트 거래소에 상장하였고, NKN/USDT, NKN/ETH 거래쌍으로 거래 가능합니다.(<a target="_blank" href="https://gateio.io/article/16464">www.gateio.io</a>)'
   },
   copyRight: 'Copyright © 2017-2018 NKN    |    All rights reserved'
 }
