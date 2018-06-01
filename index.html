@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="description" content="NKN is the new kind of network connectivity protocol & ecosystem powered by blockchain for an open, decentralized, and shared Internet.">
 
   <title>NKN</title>
-  <link rel="shortcut icon" href="static/img/favicon.ico"/>
+  <link rel="shortcut icon" href="/static/img/favicon.ico"/>
 
-  <link rel="stylesheet" href="static/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/css/font-awesome.min.css">
   <link rel="stylesheet" href="/static/css/bootstrap-3.3.7.min.css">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -19,12 +19,23 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-120066183-1');
+
+    let userCountryCode = '-'
+    function getCountryCode(data) {
+      userCountryCode = 'success' !== data.status ? '-' : data['countryCode']
+    }
+
+    const userContryCodeRouterMap = {
+      '-'  : '/home/en/',
+      'KR'  : '/home/kr/',
+      'CN' : '/home/zh/'
+    }
   </script>
 
   <!--<script src="static/config/default-config.json"></script>-->
 
-  <script src="static/js/jquery-3.2.1.slim.min.js"></script>
-  <script src="static/js/bootstrap-3.37.min.js"></script>
+  <script src="/static/js/jquery-3.2.1.slim.min.js"></script>
+  <script src="/static/js/bootstrap-3.37.min.js"></script>
 
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script id="for-email-rec" src=""></script>

@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import FAQ from '@/components/FAQ'
-import Calendar from '@/components/Calendar'
+import LogoDownload from '@/components/LogoDownload'
 
 Vue.use(Router)
 
@@ -11,8 +10,20 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'Index',
       component: Home
+    },
+    {
+      path: '/home/:lng/',
+      name: 'Home',
+      component: Home,
+    },
+    {
+      path: '/logo/:lng/',
+      name: "LogoDownload",
+      component: LogoDownload,
     }
   ]
 })
+
+

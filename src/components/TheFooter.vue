@@ -33,7 +33,7 @@
               </a>
             </div>
             <div>
-              <a v-if="$i18n.locale === 'en'" class="community-area-lg-md-sm-a-24" target="_blank" :href="urlList.introductionEn">
+              <a v-if="$i18n.locale !== 'zh'" class="community-area-lg-md-sm-a-24" target="_blank" :href="urlList.introductionEn">
                 <span><i class="fa fa-file" aria-hidden="true"></i></span>
                 <span class="community-area-lg-md-sm-name">{{ $t('footer.introduction') }}</span>
               </a>
@@ -46,6 +46,13 @@
               <a class="community-area-lg-md-sm-a-24" target="_blank" :href="urlList.whitePaper">
                 <span><i class="fa fa-file" aria-hidden="true"></i></span>
                 <span class="community-area-lg-md-sm-name">{{ $t('footer.whitepaper') }}</span>
+              </a>
+            </div>
+
+            <div class="nkn-logo-download-btn" v-show="$route.name !== 'LogoDownload'" @click="logoDownLoad()">
+              <a class="community-area-lg-md-sm-a-24">
+                <span><i class="fa fa-download" aria-hidden="true"></i></span>
+                <span class="community-area-lg-md-sm-name">{{ $t('footer.icon') }}</span>
               </a>
             </div>
           </div>
@@ -68,13 +75,37 @@
                 <span><i class="fa fa-medium" aria-hidden="true"></i></span>
                 <span class="community-area-lg-md-sm-name">{{ $t('footer.focus.blog') }}</span>
               </a>
-              <a v-if="$i18n.locale === 'zh'" class="community-area-lg-md-sm-a-24" v-on:mouseenter="enableIcon" v-on:mouseleave="disabledIcon">
+              <a v-if="$i18n.locale !== 'en'" class="community-area-lg-md-sm-a-24" v-on:mouseenter="enableIcon" v-on:mouseleave="disabledIcon">
                 <span><i class="fa fa-wechat" aria-hidden="true"></i></span>
                 <span class="community-area-lg-md-sm-name">{{ $t('footer.wechat') }}</span>
                 <img v-show="iconShow[0]" class="img-qrcode" src="./../assets/footer/QRcode.png" style="position: absolute; left: 50px;">
               </a>
             </div>
           </div>
+
+          <!--korean-->
+          <div v-show="$i18n.locale === 'kr'" class="col-lg-4 col-md-4 col-sm-4 nkn-contact-container">
+            <p class="row nkn-contact-title-kr">{{ $t('footer.contact.content') }}</p>
+            <div class="row">
+              <a class="email-address nkn-email-subscribe-title-kr row pull-right" href="mailto:contact@nkn.org">
+                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <span class="community-area-lg-md-sm-name nkn-email-lg-kr">{{ $t('footer.contact.email') }}</span>
+              </a>
+            </div>
+            <div v-show="emailSubscribeShow[0]" class="form-group div-input-email row">
+              <div class="input-group pull-right nkn-email-subscribe-input-group">
+                <input v-model="emailAddress" type="text" class="form-control input-email" :placeholder="$t('footer.subscribe.placeholder')">
+                <span class="input-group-btn btn-email">
+                  <button @click="subscribeEmail" class="btn btn-default btn-email" type="button">{{ $t('footer.subscribe.btnName') }}</button>
+                </span>
+              </div>
+            </div>
+            <div v-show="!emailSubscribeShow[0]" class="row success-style-kr">{{ $t('footer.subscribe.success') }}</div>
+            <div class="row txt-nkn-events-lg-kr">
+              <p>{{ $t('footer.subscribe.noMiss') }}</p>
+            </div>
+          </div>
+
 
           <div v-show="$i18n.locale === 'zh'" class="col-lg-4 col-md-4 col-sm-4 nkn-contact-container">
             <p class="row nkn-contact-title">{{ $t('footer.contact.content') }}</p>
@@ -98,6 +129,7 @@
             </div>
           </div>
 
+          <!--english-->
           <div v-show="$i18n.locale === 'en'" class="col-lg-4 col-md-4 col-sm-4 nkn-contact-container">
             <p class="row nkn-contact-title-en">{{ $t('footer.contact.content') }}</p>
             <div class="row">
@@ -128,7 +160,7 @@
           <a target="_blank" href="https://www.reddit.com/r/nknblockchain"><i class="fa fa-reddit-alien" aria-hidden="true"></i></a>
 
           <div>
-            <a v-if="$i18n.locale === 'en'" class="btn a-footer-introduction" target="_blank" :href="urlList.introductionEn"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> {{ $t('footer.introduction') }}</a>
+            <a v-if="$i18n.locale !== 'zh'" class="btn a-footer-introduction" target="_blank" :href="urlList.introductionEn"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> {{ $t('footer.introduction') }}</a>
             <a v-if="$i18n.locale === 'zh'" class="btn a-footer-introduction" target="_blank" :href="urlList.introductionCn"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> {{ $t('footer.introduction') }}</a>
           </div>
           <div>
@@ -159,7 +191,7 @@
 </template>
 
 <script>
-	export default {
+  export default {
     name: "the-footer",
     data() {
       return {
@@ -184,6 +216,10 @@
       // let
     },
     methods: {
+      logoDownLoad() {
+        this.$router.push('/logo/' + this.$i18n.locale)
+        this.scrollTop()
+      },
       scrollTop() {
         $(window).scrollTop(0)
       },
@@ -207,21 +243,21 @@
       subscribeEmail() {
         if(this.emailAddress !== '') {
 
-            $('<img src="" style="position:absolute;left: 0; top: 0;visibility: hidden;width: 0;height: 0"/>')
-                .attr("src", 'http://nkncms.nkn.org/sub.rec.php?email=' + this.emailAddress).appendTo($("body"))
-                .on("error", function () {
-                    $(this).remove()
-                })
+          $('<img src="" style="position:absolute;left: 0; top: 0;visibility: hidden;width: 0;height: 0"/>')
+            .attr("src", 'http://nkncms.nkn.org/sub.rec.php?email=' + this.emailAddress).appendTo($("body"))
+            .on("error", function () {
+              $(this).remove()
+            })
 
-            this.$set(this.emailSubscribeShow, 0, false);
+          this.$set(this.emailSubscribeShow, 0, false);
 
-            // let formData = {address: this.emailAddress}
+          // let formData = {address: this.emailAddress}
 
-            // return this.axios.get('/sub.rec.php?email=' + this.emailAddress).then(response => {
-            //     this.$set(this.emailSubscribeShow, 0, false);
-            // }).catch(error => {
-            //     console.log(error)
-            // })
+          // return this.axios.get('/sub.rec.php?email=' + this.emailAddress).then(response => {
+          //     this.$set(this.emailSubscribeShow, 0, false);
+          // }).catch(error => {
+          //     console.log(error)
+          // })
 
           // return this.axios.post(process.env.API_URL + 'email/new', formData).then(response => {
           //   if(response.data.code === 1000) {
@@ -234,21 +270,21 @@
       },
       subscribeXsEmail() {
         if(this.emailAddressXs !== '') {
-            $('<img src="" style="visibility: hidden;width: 0;height: 0"/>')
-                .attr("src", 'http://nkncms.nkn.org/sub.rec.php?email=' + this.emailAddressXs).appendTo($("body"))
-                .on("error", function () {
-                    $(this).remove()
-                })
+          $('<img src="" style="visibility: hidden;width: 0;height: 0"/>')
+            .attr("src", 'http://nkncms.nkn.org/sub.rec.php?email=' + this.emailAddressXs).appendTo($("body"))
+            .on("error", function () {
+              $(this).remove()
+            })
 
-            this.$set(this.emailSubscribeXsShow, 0, false);
+          this.$set(this.emailSubscribeXsShow, 0, false);
 
-            // let formData = {address: this.emailAddressXs}
+          // let formData = {address: this.emailAddressXs}
 
-            // return this.axios.get('/sub.rec.php?email=' + this.emailAddress).then(response => {
-            //     this.$set(this.emailSubscribeShow, 0, false);
-            // }).catch(error => {
-            //     console.log(error)
-            // })
+          // return this.axios.get('/sub.rec.php?email=' + this.emailAddress).then(response => {
+          //     this.$set(this.emailSubscribeShow, 0, false);
+          // }).catch(error => {
+          //     console.log(error)
+          // })
           // return this.axios.post(process.env.API_URL + 'email/new', formData).then(response => {
           //   if(response.data.code === 1000) {
           //     this.$set(this.emailSubscribeXsShow, 0, false);
@@ -343,20 +379,6 @@
     padding-right: 333px;
   }
 
-  .nkn-email-lg-en {
-    position: inherit !important;
-    padding-right: 118px;
-  }
-
-  .nkn-contact-title-en {
-    text-align: right;
-    padding-right: 118px;
-  }
-
-  .nkn-email-subscribe-title-en {
-    padding-right: 117px;
-  }
-
   .copyright {
     position: absolute;
     color: white;
@@ -439,13 +461,6 @@
     padding-right: 167px;
   }
 
-  .success-style-en {
-    font-size: 18px;
-    color: green;
-    text-align: right;
-    padding-right: 32px;
-  }
-
   .success-style,
   .success-style-xs {
     font-size: 18px;
@@ -465,13 +480,6 @@
     color: #8ea1c6;
     text-align: right;
     padding-right: 147px;
-  }
-
-  .txt-nkn-events-lg-en {
-    font-size: 18px;
-    color: #8ea1c6;
-    text-align: right;
-    padding-right: 46px;
   }
 
   .img-qrcode {
@@ -506,4 +514,69 @@
   input:-moz-placeholder, textarea:-moz-placeholder {color:#e4e4e4;}
   input::-moz-placeholder, textarea::-moz-placeholder {color:#e4e4e4;}
   input:-ms-input-placeholder, textarea:-ms-input-placeholder {color:#e4e4e4;}
+
+  .nkn-logo-download-btn:hover {
+    cursor: pointer;
+  }
+
+  /*begin: for english language*/
+  .nkn-email-lg-en {
+    position: inherit !important;
+    padding-right: 118px;
+  }
+
+  .nkn-contact-title-en {
+    text-align: right;
+    padding-right: 118px;
+  }
+
+  .nkn-email-subscribe-title-en {
+    padding-right: 117px;
+  }
+
+  .success-style-en {
+    font-size: 18px;
+    color: green;
+    text-align: right;
+    padding-right: 32px;
+  }
+
+  .txt-nkn-events-lg-en {
+    font-size: 18px;
+    color: #8ea1c6;
+    text-align: right;
+    padding-right: 46px;
+  }
+  /*end: for english language*/
+
+  /*begin: for korean language*/
+  .nkn-email-lg-kr {
+    position: inherit !important;
+    padding-right: 118px;
+  }
+
+  .nkn-contact-title-kr {
+    text-align: right;
+    padding-right: 360px;
+    margin-left: -30px;
+  }
+
+  .nkn-email-subscribe-title-kr {
+    padding-right: 117px;
+  }
+
+  .success-style-kr {
+    font-size: 18px;
+    color: green;
+    text-align: right;
+    padding-right: 112px;
+  }
+
+  .txt-nkn-events-lg-kr {
+    font-size: 18px;
+    color: #8ea1c6;
+    text-align: right;
+    padding-right: 300px;
+  }
+  /*end: for english language*/
 </style>

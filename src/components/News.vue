@@ -7,14 +7,12 @@
 
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <!--<div v-if="noChina[0].status" class="twitter-area">-->
-          <div v-if="$i18n.locale === 'en'" class="twitter-area">
-            <a v-if="$i18n.locale === 'en'" class="twitter-timeline" href="https://twitter.com/NKN_ORG?ref_src=twsrc%5Etfw">{{ $t('media.twitterLoading') }}</a >
-            <!--<iframe v-show="isChina[0].status" width="100%" height="730" frameborder="0" scrolling="no" src="http://v.t.sina.com.cn/widget/widget_blog.php?language=zh_cn&width=0&height=730&uid=6551363980"></iframe>-->
+          <div v-show="$i18n.locale === 'en'" class="twitter-area">
+            <a class="twitter-timeline" href="https://twitter.com/NKN_ORG?ref_src=twsrc%5Etfw">{{ $t('media.twitterLoading') }}</a >
           </div>
 
           <!--<div v-if="$i18n.locale === 'zh'" v-for="newI in 3">-->
-          <div v-show="$i18n.locale === 'zh'" class="news-area">
+          <div v-show="$i18n.locale !== 'en'" class="news-area">
             <div v-for="newI in 3">
               <p class="new-tit"><a target="_blank" :href="$t('media.newsCN.newsUrl' + newI)">{{ $t('media.newsCN.newsTit' + newI) }}</a></p>
               <p class="new-time">{{ $t('media.newsCN.newsTime' + newI) }}</p>
@@ -78,7 +76,7 @@
             <img v-show="$i18n.locale === 'zh'"
                  @click="playNews('nkn-news-v1')"
                  class="img-youtube1 nkn-news-video-play-zh" src="./../assets/media/youtube.png" alt=""/>
-            <a v-show="$i18n.locale === 'en'" target="_blank" href="https://www.youtube.com/watch?v=smzyW75ttH8">
+            <a v-show="$i18n.locale !== 'zh'" target="_blank" href="https://www.youtube.com/watch?v=smzyW75ttH8">
               <img class="img-video1" src="../assets/media/video/video1.png">
               <img v-show="isShowPlay[0]" class="img-youtube1" src="./../assets/media/youtube.png" alt="">
             </a>
@@ -101,7 +99,7 @@
                  @click="playNews('nkn-news-v2')"
                  class="img-youtube1 nkn-news-video-play-zh" src="./../assets/media/youtube.png" alt=""/>
 
-            <a v-show="$i18n.locale === 'en'" target="_blank" href="https://youtu.be/oyNjTbtMD94">
+            <a v-show="$i18n.locale !== 'zh'" target="_blank" href="https://youtu.be/oyNjTbtMD94">
               <img class="img-video2" src="../assets/media/video/video2.png">
               <img v-show="isShowPlay[1]" class="img-youtube2" src="./../assets/media/youtube.png" alt="">
             </a>
@@ -124,7 +122,7 @@
                  @click="playNews('nkn-news-v3')"
                  class="img-youtube1 nkn-news-video-play-zh" src="./../assets/media/youtube.png" alt=""/>
 
-            <a v-show="$i18n.locale === 'en'" target="_blank" href="https://youtu.be/4pl2WkEbkus">
+            <a v-show="$i18n.locale !== 'zh'" target="_blank" href="https://youtu.be/4pl2WkEbkus">
               <img class="img-video3" src="./../assets/media/video/video3.png">
               <img v-show="isShowPlay[2]" class="img-youtube2" src="./../assets/media/youtube.png" alt="">
             </a>

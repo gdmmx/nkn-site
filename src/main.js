@@ -8,19 +8,44 @@ import VueAxios from 'vue-axios'
 import VueI18n from 'vue-i18n'
 import LangStorage from './helpers/lang'
 
+
 Vue.use(VueAxios, axios)
 Vue.use(VueI18n)
+
 
 const i18n = new VueI18n({
   locale: LangStorage.getLang('en'),  // 语言标识
   messages: {
     'zh': require('./common/lang/zh'),
-    'en': require('./common/lang/en')
+    'en': require('./common/lang/en'),
+    'kr': require('./common/lang/kr')
   }
 })
 
+window.$nknI18n = i18n
+
 
 Vue.config.productionTip = false
+
+let lanHomeList = {
+  'zh': {lang: 'zh'},
+  'en': {lang: 'en'},
+  'kr': {lang: 'kr'},
+  '-' : {lang: 'en'},
+}
+
+router.beforeEach((to, from, next) => {
+  if(to.fullPath === from.fullPath && "Index" !== to.name) {
+    next()
+    return
+  }
+
+  let locale = to.params.lng
+  window.$nknI18n.locale = locale
+  LangStorage.setLang(locale)
+
+  next()
+})
 
 /* eslint-disable no-new */
 new Vue({

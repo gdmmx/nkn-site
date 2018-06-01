@@ -1,35 +1,40 @@
 <template>
-  <nav class="navbar" :class="[$route.name === 'Home' ? 'navbar-default' : 'navbar-default-blue']">
+  <nav class="navbar" :class="[isHome() ? 'navbar-default' : 'navbar-default-blue']">
     <div class="container container-fluid-fix">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <img v-if="$route.name === 'Home'"  class="nkn-banner-logo" src="./../assets/nkn-logo-white.png" @click="goToHome">
-        <img v-if="$route.name !== 'Home'" class="nkn-banner-logo" src="./../assets/white_logo.png" @click="goToHome">
+        <img v-if="isHome()"  class="nkn-banner-logo" src="./../assets/nkn-logo-white.png" @click="goToHome">
+        <img v-if="!isHome()" class="nkn-banner-logo" src="./../assets/white_logo.png" @click="goToHome">
       </div>
       <div class="hidden-xs">
-        <ul class="nav navbar-nav navbar-right nkn-nav-menu" :class="[$route.name === 'Home' ? 'narbar-main-pages' : 'narbar-child-pages']">
-          <li v-if="$route.name === 'Home'"><a class="scroll-bottom" @click="scrollTo('nkn-overview-container')">{{ $t('navbar.overview') }}</a></li>
+        <ul class="nav navbar-nav navbar-right nkn-nav-menu" :class="[isHome() ? 'narbar-main-pages' : 'narbar-child-pages']">
+          <li><a class="scroll-bottom" @click="scrollTo('nkn-overview-container')">{{ $t('navbar.overview') }}</a></li>
 
-          <li v-if="$route.name === 'Home'" class="dropdown">
+          <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                 aria-haspopup="true" aria-expanded="false">{{ $t('navbar.docs') }}<span class="caret"></span></a>
             <ul class="dropdown-menu nkn-doc-link">
-              <li><a v-if="$i18n.locale === 'en'" target="_blank" :href="urlList.introductionEn">{{ $t('navbar.introduction') }}</a></li>
               <li><a v-if="$i18n.locale === 'zh'" target="_blank" :href="urlList.introductionCn">{{ $t('navbar.introduction') }}</a></li>
+              <li><a v-if="$i18n.locale !== 'zh'" target="_blank" :href="urlList.introductionEn">{{ $t('navbar.introduction') }}</a></li>
               <li><a target="_blank" :href="urlList.whitePaper">{{ $t('navbar.whitepaper') }}</a></li>
               <li><a target="_blank" :href="urlList.economicModel">{{ $t('navbar.economicModel') }}</a></li>
             </ul>
           </li>
 
-          <li v-if="$route.name === 'Home'"><a class="scroll-bottom" @click="scrollTo('nkn-team-container')">{{ $t('navbar.team') }}</a></li>
-
-          <li v-if="$route.name === 'Home'"><a class="scroll-bottom" @click="scrollTo('nkn-news-container')">{{ $t('navbar.news') }}</a></li>
-
-          <!--<li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>-->
-
-          <li v-if="$route.name !== 'FAQ'"><a class="scroll-bottom" @click="changeLocale">{{ $t('navbar.language') }}</a></li>
+          <li><a class="scroll-bottom" @click="scrollTo('nkn-team-container')">{{ $t('navbar.team') }}</a></li>
+          <li><a class="scroll-bottom" @click="scrollTo('nkn-news-container')">{{ $t('navbar.news') }}</a></li>
+          <li>
+            <div class="dropdown nkn-language-switch">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                {{ $t('navbar.language') }}
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li v-for="(r, i) in urlList.homeURIList"><a @click="changeLocale(i, r.path, r.showTwitter)">{{ r.text }}</a></li>
+              </ul>
+            </div>
+          </li>
         </ul>
-      </div><!-- /.navbar-collapse -->
+      </div>
 
       <div class="hidden-lg hidden-md hidden-sm">
         <ul class="nav navbar-nav navbar-right narbar-min">
@@ -37,23 +42,18 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></a>
             <ul class="dropdown-menu">
-              <!--<li><a class="scroll-bottom" @click="goToHome">{{ $t('navbar.home') }}</a></li>-->
-              <!--<li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>-->
-              <!--<li><a @click="changeLocale('en')">{{ $t('navbar.english') }}</a></li>-->
-              <!--<li><a @click="changeLocale('zh')">{{ $t('navbar.chinese') }}</a></li>-->
               <li><a @click="changeLocale">{{ $t('navbar.language') }}</a></li>
             </ul>
           </li>
         </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+      </div>
+    </div>
   </nav>
 </template>
 
 <script>
-  import LangStorage from './../helpers/lang'
 
-	export default {
+  export default {
     name: "NavBar",
     data() {
       return {
@@ -61,7 +61,12 @@
           introductionEn: process.env.DOC_URL + 'NKN_Introduction_en.pdf',
           introductionCn: process.env.DOC_URL + 'NKN_Introduction_cn.pdf',
           whitePaper: process.env.DOC_URL + 'NKN_Whitepaper.pdf',
-          economicModel: process.env.DOC_URL + 'NKN_Economic_Model.pdf'
+          economicModel: process.env.DOC_URL + 'NKN_Economic_Model.pdf',
+          homeURIList: {
+            'zhHome': {path: '/zh/',  text: "中文", showTwitter: false},
+            'enHome': {path: '/en/', text: "English", showTwitter: true},
+            'krHome': {path: '/kr/', text: "한국어", showTwitter: true},
+          }
         }
       }
     },
@@ -69,6 +74,9 @@
       // this.getConfig()
     },
     methods: {
+      isHome() {
+        return ("Home" === this.$route.name || "Index" === this.$route.name)
+      },
       goToHome() {
         if (this.$route.name !== 'Home') {
           this.$router.push({name: 'Home'})
@@ -77,8 +85,13 @@
         }
       },
       scrollTo(targetId) {
-          let $target = $("#" + targetId)
-          $(window).scrollTop($target.offset().top)
+        if(!this.isHome()) {
+          this.$router.push({name: 'Home', params:{'scrollTo': targetId}})
+          return
+        }
+
+        let $target = $("#" + targetId)
+        $(window).scrollTop($target.offset().top)
       },
       scrollBottom() {
         $(window).scrollTop($("#home").get(0).scrollHeight)
@@ -86,22 +99,17 @@
       scrollTop() {
         $(window).scrollTop()
       },
-      changeLocale() {
-        let locale = 'en'
-
-        if (this.$i18n.locale === 'en') {
-          locale = 'zh'
-        }
-
-        if (locale !== this.$i18n.locale) {
-          this.$i18n.locale = locale
-          LangStorage.setLang(this.$i18n.locale)
-        }
-
-        if (this.$i18n.locale === 'zh') {
-          $("#twitter-widget-0").hide();
+      changeLocale(name, path, showTwitter) {
+        //only one sub uri, hard code to workaround
+        if(this.isHome()) {
+          this.$router.push('/home' + path)
+          if (showTwitter) {
+            $("#twitter-widget-0").show();
+          } else {
+            $("#twitter-widget-0").hide();
+          }
         } else {
-          $("#twitter-widget-0").show();
+          this.$router.push('/logo' + path)
         }
       },
       getConfig() {
@@ -239,5 +247,21 @@
 
   .scroll-bottom:hover {
     cursor: pointer;
+  }
+
+  .nkn-language-switch > button.btn {
+    padding: 5px 15px;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 300;
+    color: white !important;
+  }
+
+  .nkn-language-switch > button.btn:hover {
+    color: #26bcff !important;
+  }
+
+  .nkn-language-switch .dropdown-menu {
+    min-width: 100px !important;
   }
 </style>
