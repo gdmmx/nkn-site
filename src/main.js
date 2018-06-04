@@ -18,11 +18,14 @@ const i18n = new VueI18n({
   messages: {
     'zh': require('./common/lang/zh'),
     'en': require('./common/lang/en'),
+    'jp': require('./common/lang/jp'),
     'kr': require('./common/lang/kr')
   }
 })
 
 window.$nknI18n = i18n
+
+LangStorage.setLang('en')
 
 
 Vue.config.productionTip = false
@@ -30,12 +33,18 @@ Vue.config.productionTip = false
 let lanHomeList = {
   'zh': {lang: 'zh'},
   'en': {lang: 'en'},
+  'jp': {lang: 'jp'},
   'kr': {lang: 'kr'},
   '-' : {lang: 'en'},
 }
 
 router.beforeEach((to, from, next) => {
-  if(to.fullPath === from.fullPath && "Index" !== to.name) {
+  if("Index" === to.name) {
+    next()
+    return
+  }
+
+  if(to.fullPath === from.fullPath) {
     next()
     return
   }

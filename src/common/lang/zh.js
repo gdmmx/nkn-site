@@ -9,7 +9,7 @@ module.exports = {
     whitepaper: '白皮书',
     economicModel: '经济模型',
     faq: 'FAQ',
-    language: 'English',
+    language: '语言',
     english: 'English',
     chinese: '中文'
   },
