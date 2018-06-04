@@ -46,7 +46,7 @@
       </div>
 
       <div class="row hidden-xs">
-        <a v-if="$i18n.locale === 'en'" class="a-btn-hover btn-about2 btn-left" target="_blank" :href="urlList.introductionEn">
+        <a v-if="$i18n.locale !== 'zh'" class="a-btn-hover btn-about2 btn-left" target="_blank" :href="urlList.introductionEn">
           {{ $t('banner.introduction') }}
         </a>
         <a v-if="$i18n.locale === 'zh'" class="a-btn-hover btn-about2 btn-left" target="_blank" :href="urlList.introductionCn">
@@ -56,7 +56,7 @@
 
       <div class="row hidden-lg hidden-md hidden-sm">
         <div class="col-lg-6 col-md-6 col-sm-6 col-banner-xs-">
-          <a v-if="$i18n.locale === 'en'" class="a-btn-hover btn-about2 btn-center" target="_blank" :href="urlList.introductionEn">
+          <a v-if="$i18n.locale !== 'zh'" class="a-btn-hover btn-about2 btn-center" target="_blank" :href="urlList.introductionEn">
             {{ $t('banner.introduction') }}
           </a>
           <a v-if="$i18n.locale === 'zh'" class="a-btn-hover btn-about2 btn-center" target="_blank" :href="urlList.introductionCn">
@@ -273,26 +273,31 @@
 
   @media (max-width:768px) {
     .nkn-open-source-countdown-time div[class*="nkn-open-source-countdown"] {
-      width: 48px;
-      height: 80px;
+      width: 38px;
+      height: 70px;
+      border-top: 35px solid #11496f;
+      border-bottom: 35px solid #0E2943;
+    }
+
+    .nkn-open-source-countdown-time .nkn-open-source-countdown-colon > div {
+      margin-top: 12.5px !important;
+    }
+
+    .nkn-open-source-countdown-time .nkn-open-source-countdown-colon > div:nth-child(2) {
+      margin-top: 52.5px !important;
     }
 
     .nkn-open-source-countdown-time > div > div {
-      font-size: 70px;
-      margin-top: -48px;
+      font-size: 60px;
+      margin-top: -41px;
     }
 
     .nkn-open-source-countdown-unit > div {
-      width: 100px;
+      width: 80px;
     }
 
     .nkn-open-source-countdown-unit > div:last-child {
       margin-right: 0;
-    }
-
-    .nkn-banner.nkn-en-banner {
-      position: relative;
-      height: 740px;
     }
   }
 </style>

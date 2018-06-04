@@ -1,22 +1,22 @@
 module.exports = {
   navbar: {
     home: 'Home',
-    overview: 'Overview',
-    news: 'News',
-    team: 'Team',
-    docs: 'Docs ',
-    introduction: 'introduction',
-    whitepaper: 'White Paper',
-    economicModel: 'Economic Model',
+    overview: '概要',
+    news: 'ニュース',
+    team: 'チーム',
+    docs: '資料 ',
+    introduction: '前書き',
+    whitepaper: 'ホワイトペーパー',
+    economicModel: '経済モデル',
     faq: 'FAQ',
-    language: 'Language',
+    language: '言語',
     english: 'English',
     chinese: '中文'
   },
   banner: {
-    introduction: 'Introduction',
+    introduction: '前書き',
     sourceCode: 'Open Source',
-    slogan: 'NKN is the new kind of network connectivity protocol & ecosystem powered by blockchain for an open, decentralized, and shared Internet.'
+    slogan: 'NKNは、ブロックチェーンで駆動する、オープンで、分散化され、共有されたインターネットの、新しい種類のネットワーク接続プロトコル＆エコシステムです。'
   },
   whatWeDo: {
     name: 'The Internet of tomorrow',
@@ -24,70 +24,70 @@ module.exports = {
   },
   why: {
     tit: 'Why',
-    name: 'Shortcomings of today’s Internet',
+    name: '今日のインターネットの欠点',
     model1: {
-      name: 'Net Neutrality',
-      content: 'The repeal of net neutrality policy means that Internet Service Providers can now block, throttle, and prioritize content and services as they wish.'
+      name: 'ネットの中立性',
+      content: 'ネット中立性政策の廃止は、インターネットサービスプロバイダーがコンテンツやサービスを望みどおりにブロックし、調整し、優先順位を付けることができることを意味します。'
     },
     model2: {
-      name: 'Net Utilization Inefficiency',
-      content: 'A huge inefficiency exists in today’s Internet since connectivity and bandwidth are not balanced between supply and demand. Ephemeral networking resource are lost every second.'
+      name: 'ネット利用の非効率性',
+      content: '現在のインターネットには、接続と帯域幅が、供給と需要のバランスを取れていないため、とても非効率的です。一時的ネットワーキングリソースは毎秒失われています。'
     },
     model3: {
-      name: 'Deficiency of today\'s SDN',
-      content: 'Traditional SDN (Software Defined Networks) need centralized controller: a performance bottleneck & target for coordinated attacks paralyzing entire networks.  SDN also lacks dynamic control based on real-time traffic & pricing.'
+      name: '現状のSDNの欠如',
+      content: '従来のSDN（ソフトウェア・デファインド・ネットワーク）では、中央集中機能が必要であり、そのため、パフォーマンスのボトルネックやネットワーク全体を麻痺させる攻撃に対する脆弱性などの問題を抱えています。SDNには、リアルタイムのトラフィックと価格に基づいた動的制御もありません。'
     }
   },
   what: {
     tit: 'What',
-    name: 'Revolutionize networking and its business model',
+    name: 'ネットワークとそのビジネスモデルの革命',
     model1: {
-      name: 'The Third Pillar of Blockchain',
-      content: 'By blockchainizing the network layer, NKN is providing the missing third pillar of internet infrastructure.  Just as Ethereum has done for compute and Filecoin for storage, NKN will decentralize network connectivity and transmission.'
+      name: 'ブロックチェーンの第三の柱',
+      content: 'NKNは、ネットワーク層をブロック化することで、欠けているインターネットインフラの第3の柱を提供します。イーサリアムがコンピューティング、Filecoinをストレージ用として行ったのと同じように、NKNはネットワーク接続と転送を分散させます。'
     },
     model2: {
-      name: 'Decentralized Connectivity Exchange',
-      content: 'NKN is the first decentralized connectivity exchange to handle millions of micro payments for  millions of users in real time.'
+      name: '分散型接続取引',
+      content: 'NKNは、何百万人ものユーザーのために、何百万ものマイクロペイメントをリアルタイムで処理する最初の分散型接続取引所です。'
     },
     model3: {
-      name: 'Decentralized Software Defined Network',
-      content: 'NKN is an emerging decentralized software defined network (SDN) at global scale. It enables network operators and enterprises to dynamically route traffic according to real time performance metrics and cost.'
+      name: '分散ソフトウェア・デファインド・ネットワーク',
+      content: 'NKNは、グローバルスケールで新興の分散型ソフトウェア・デファインド・ネットワーク（SDN）です。これにより、ネットワークオペレータおよび企業は、リアルタイムパフォーマンスメトリックおよびコストに従ってトラフィックを動的にルーティングできます。'
     }
   },
   how: {
     tit: 'How',
-    name: 'Consensus, PoR, and tokenized connectivity',
+    name: 'コンセンサス、PoR、トークン化された接続',
     model1: {
-      name: 'Highly Scalable Consensus',
-      content: 'NKN has invented a highly scalable consensus algorithm based on Cellular Automata concept and Ising model, and has applied it to next generation blockchain and peer-to-peer networking across millions of nodes.'
+      name: 'スケーラブルな合意',
+      content: 'NKNは、セル・オートマトンの概念とイジングモデルをベースに、非常にスケーラブルなコンセンサスアルゴリズムを発明し、数百万のノードにわたって次世代のブロックチェーンとピアツーピアネットワークに適用しました。'
     },
     model2: {
-      name: 'Proof of Relay (PoR)',
-      content: 'PoR uses signature chain as a proof of relay at all nodes along the network route.  This allows a level of secure data transmission that is not only verifiable but also impossible to tamper with or forge.'
+      name: 'プルーフ・オブ・リレイ（PoR）',
+      content: 'PoRは、ネットワークルートに沿ったすべてのノードでのプルーフ・オブ・リレイ（PoR）として、シグニチャーチェーンを使用します。これにより、検証可能であるだけでなく、改ざんが不可能な、安全なデータ通信が可能になります。'
     },
     model3: {
-      name: 'Tokenized Connectivity',
-      content: 'NKN’s economic model will provide token reward for participants who contribute relay traffic for other users. In addition, mining reward will also be statistically correlated to the amount of data participants help relay.'
+      name: 'トークン化された接続',
+      content: 'NKNの経済モデルは、他のユーザーにトラフィック中継を提供する参加者にトークン報酬を提供します。さらに、マイニング報酬は、参加者が中継に貢献するデータの量と統計的に相関します。'
     }
   },
   ea: {
-    tit: 'Ecosystem Attractions',
-    name: 'NKN is more than a “New Internet”',
+    tit: 'エコシステムの魅力',
+    name: 'NKNは "新しいインターネット"',
     model1: {
-      name: 'Ultra Openness',
-      content: 'Any nodes can connect to our fully open network from anywhere. NKN will always nurture network openness, true peer to peer connectivity and scalability.'
+      name: 'ウルトラ・オープン',
+      content: 'すべてのノードは、どこからでも完全にオープンなネットワークに接続できます。NKNは、常にネットワークのオープン性、真のピアツーピア接続性、スケーラビリティを育成します。'
     },
     model2: {
-      name: 'Uberized Connectivity',
-      content: 'Individuals earn token rewards by sharing idle connectivity and transmission capability. With this incentive model, NKN not only improves user experience , but also becomes more stable and attack resistant as more nodes join the network.'
+      name: 'Uber化された接続',
+      content: '個人は、アイドル状態の接続性および送信能力を共有することによってトークン報酬を得ます。このインセンティブモデルでは、NKNはユーザーエクスペリエンスを向上させるだけでなく、より多くのノードがネットワークに加わるにつれて、より安定して攻撃にたいして堅牢になります。'
     },
     model3: {
-      name: 'Community Co-Built Network',
-      content: 'NKN incentivized individuals and enterprises to deploy new equipment, upgrade network  infrastructure, enhance network capacity, and improve network connectivity and reliability.'
+      name: 'コミュニティ共同構築ネットワーク',
+      content: 'NKNは、個人や企業に新しいデバイスの導入、ネットワークインフラストラクチャのアップグレード、ネットワークキャパシティの強化、ネットワーク接続と信頼性の向上を促しました。'
     }
   },
   media: {
-    name: 'NKN News',
+    name: 'NKNニュース',
     twitterLoading: 'Loading...',
     news: {
       newsTit1: 'From Turbo Code to Blockchain ：',
@@ -119,72 +119,72 @@ module.exports = {
     }
   },
   team: {
-    name: 'Core Team',
+    name: 'コアチーム',
     yanBoLi: {
       name: 'Yanbo Li',
-      tit1: 'Founder | Core Developer',
-      tit2: 'Former Co-founder of Onchain',
-      desc1: 'Core designer and developer of the blockchain system “DNA”.',
-      desc2: 'Open-source advocate, Linux Kernel network subsystem code contributor.',
+      tit1: '創業者 | コア開発者',
+      tit2: 'OnChain共同設立者',
+      desc1: 'ブロックチェーンシステム "DNA"のコアデザイナー・開発者。',
+      desc2: 'オープンソースの支持者、Linuxのカーネルネットワークサブシステムコードの貢献者。',
       linkedin: 'https://www.linkedin.com/in/yanbo-li-b478585',
       github: 'https://github.com/dreamfly281'
     },
     bruceZLi: {
       name: 'Zheng “Bruce” Li',
-      tit: 'Co-Founder | Strategy & Innovation',
-      desc1: 'Founded multi million dollars startup projects at Nokia & Google, led R&D teams across US, EU, CN.',
-      desc2: 'Expert on telecom innovation, specializing in strategy and business development.',
+      tit: '共同設立者 | 戦略とイノベーション',
+      desc1: 'Nokia、Googleで数百万ドルのスタートアッププロジェクトを創設し、米国、EU、CNのR＆Dチームを率いた経験を持ちます。',
+      desc2: '戦略とビジネス開発を専門とする電気通信技術革新の専門家です。',
       linkedin: 'https://www.linkedin.com/in/zbruceli'
     },
     yiLunZhang: {
       name: 'Yilun Zhang',
-      tit: 'Co-Founder | Core Researcher & Developer',
-      desc1: 'Ph.D in physics at University of California San Diego. B.S. in physics at Peking University.',
-      desc2: 'Domain expert in Cellular Automata, Ising model and distributed information processing systems. Full stack engineer.',
+      tit: '共同設立者 | コア研究者および開発者',
+      desc1: 'カリフォルニア大学サンディエゴ校の物理学博士。北京大学の物理学の学士号。',
+      desc2: 'セル・オートマトンのドメイン専門家、イジングモデル、および分散情報処理システム。フルスタックエンジニア。',
       linkedin: 'https://www.linkedin.com/in/yilun-zhang-',
       github: 'https://github.com/yilunzhang'
     },
     justinWang: {
       name: 'Justin Wang',
-      tit: 'Co-Founder | Core Researcher',
-      desc1: 'Technologist with 45 international issued and pending patents.',
-      desc2: 'Rich product experience in Nokia, Microsoft, Amazon and Ericsson.',
+      tit: '共同設立者 | コア研究者',
+      desc1: '45の発行済みおよび保留中の国際特許を持つ技術者。',
+      desc2: 'Nokia、 Microsoft、Amazon、Ericssonでの豊富な製品開発体験。',
       linkedin: 'https://www.linkedin.com/in/justin-wang-99b36016'
     },
     allenDixon: {
       name: 'Allen Dixon',
-      tit: 'Business Development & Compliance',
-      desc1: 'Senior BD expert proficient at  integrating tech and business to create new opportunities.',
-      desc2: '20+ years of Telecom experience. Led partnerships with Apple, Amazon, startups, and more.',
+      tit: 'ビジネス開発とコンプライアンス',
+      desc1: 'シニアのBDエキスパートであり、新しい機会を創出するための技術とビジネスのインテグレーションに堪能です。',
+      desc2: '20年以上のテレコム経験を持ち、Apple、Amazon、スタートアップなどを率いた経験を持ちます。',
       linkedin: 'https://www.linkedin.com/in/dixonal'
     },
     chrisWu: {
       name: 'Chris Wu',
-      tit: 'Business Development & Operation',
-      desc1: 'Experienced BD and TPM with a demonstrated history of working in Qualcomm and Amazon.',
-      desc2: 'Lead global leading mobile projects launch with US, Israel, India, Europe and China R&D team.',
+      tit: '事業開発 | 運営',
+      desc1: 'Qualcomm とAmazonで実績のあるBDとTPMを経験しました。',
+      desc2: '米国、イスラエル、インド、ヨーロッパ、中国の研究開発チームとともに、世界をリードするモバイル・プロジェクトをリードしています。',
       linkedin: 'https://www.linkedin.com/in/chris-wu-36446846'
     },
     whitfieldDiffie: {
       name: 'Whitfield Diffie',
-      tit: 'NKN Advisor',
+      tit: 'NKNの顧問',
       url: 'https://en.wikipedia.org/wiki/Whitfield_Diffie',
-      introductionCryptography: 'Inventor of public key cryptography (Diffie-Hellman)',
-      introductionTuringAward: '2015 Turing Award winner',
-      introductionTit: 'Other notable awards and honors for Diffie:',
-      introduction1: 'Fellow of the Royal Society;',
-      introduction2: 'Member, National Academy of Engineering;',
-      introduction3: 'Honorary doctorate  from the  Swiss Federal Institute of Technology;',
-      introduction4: 'Fellow of the  Marconi Foundation;',
-      introduction5: 'Doctor of Science (Honoris Causa) by  Royal Holloway, University of London;',
-      introduction6: 'IEEE Donald G. Fink Prize Paper Award in 1981;',
-      introduction7: 'The Franklin Institute’s Louis E. Levy Medal in 1997;',
-      introduction8: 'Golden Jubilee Award for Technological Innovation from the IEEE Information Theory Society;',
-      introduction9: 'IEEE Richard W. Hamming Medal in 2010.',
+      introductionCryptography: '公開鍵暗号の発明者（Diffie-Hellman）',
+      introductionTuringAward: '2015チューリング賞受賞者',
+      introductionTit: '他の賞と栄誉：',
+      introduction1: '王立協会員、',
+      introduction2: '全米工学アカデミーメンバー、',
+      introduction3: 'スイス連邦工科大学の名誉博士号、',
+      introduction4: 'マルコーニ財団のフェロー、',
+      introduction5: 'ロンドン大学ロイヤルホロウェイの名誉学位科学博士、',
+      introduction6: '1981年のIEEE Donald G. Fink賞論文賞、',
+      introduction7: '1997年に Franklin Institute の Louis E. Levy メダルを受賞、',
+      introduction8: 'IEEE情報理論学会からの技術革新のためのゴールデン・ジュビリー賞を受賞、',
+      introduction9: '2010年に IEEE Richard W. Hamming メダルを受賞',
     }
   },
   partnersAndAlliance: {
-    tit: "Partners and Alliance"
+    tit: "パートナーと提携"
   },
   video: {
     name: 'Video',
@@ -244,45 +244,45 @@ module.exports = {
     a11: 'Absolutely, we would love to form a big community. We are not focusing only on making the community bigger, but more importantly a higher quality community. That community will embrace technology, use, improve, and expand NKN network, participate in NKN core software and application development, support new users.',
   },
   calendar: {
-    title: 'Open Source Soon',
-    unitDays: "DAYS",
-    unitHours: "HOURS",
-    unitMinutes: "MINUTES",
+    title: 'オープンソース化',
+    unitDays: "日",
+    unitHours: "時間",
+    unitMinutes: "分",
   },
   footer: {
     home: 'Home',
     homepage: 'Home',
     email: 'Email',
-    community: 'Community',
-    resource: 'Resource',
+    community: 'コミュニティ',
+    resource: 'リソース',
     telegram: 'Telegram',
     twitter: 'Twitter',
     reddit: 'Reddit',
     gitHub: 'GitHub',
-    introduction: 'Introduction',
-    whitepaper: 'Whitepaper',
-    icon: 'Logo download',
+    introduction: '前書き',
+    whitepaper: 'ホワイトペーパー',
+    icon: 'ロゴのダウンロード',
     contact: {
-      content: 'Further information upon request :',
+      content: '詳細をお求めの方はぜひお気軽にご連絡ください。',
       email: 'contact@nkn.org'
     },
     focus: {
-      name: 'Follow',
-      joinUs: 'Join us',
-      news: 'News',
-      blog: 'Blog'
+      name: 'フォローする',
+      joinUs: '参加する',
+      news: 'ニュース',
+      blog: 'ブログ'
     },
     subscribe: {
-      placeholder: 'Your email address',
+      placeholder: 'メールアドレス',
       btnName: 'Subscribe',
-      noMiss: 'Don\'t miss out on the newest NKN events!',
+      noMiss: '最新のNKNイベントをお見逃しなく。',
       success: 'You had subscribed NKN news successfully!'
     },
     wechat : 'WeChat'
   },
   navBottom: {
-    gotIt: 'Got it',
-    txt: 'NKN has been listed on Gate (<a target="_blank" href="https://gate.io/article/16464">www.gate.io</a>) on May 28th, 2018. The trading pairs of NKN/USDT and NKN/ETH are available for transactions.'
+    gotIt: '承諾する',
+    txt: 'NKNは2018年5月28日にGate (<a target="_blank" href="https://gate.io/article/16464">www.gate.io</a>) に掲載されました。NKN / USDTとNKN / ETHの両替は取引に使用できます。'
   },
   copyRight: 'Copyright © 2017-2018 NKN    |    All rights reserved'
 }

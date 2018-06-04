@@ -15,7 +15,7 @@
             <ul class="dropdown-menu nkn-doc-link">
               <li><a v-if="$i18n.locale === 'zh'" target="_blank" :href="urlList.introductionCn">{{ $t('navbar.introduction') }}</a></li>
               <li><a v-if="$i18n.locale !== 'zh'" target="_blank" :href="urlList.introductionEn">{{ $t('navbar.introduction') }}</a></li>
-              <li><a target="_blank" :href="urlList.whitePaper">{{ $t('navbar.whitepaper') }}</a></li>
+              <li><a target="_blank" :href="getWhitepaperUrl()">{{ $t('navbar.whitepaper') }}</a></li>
               <li><a target="_blank" :href="urlList.economicModel">{{ $t('navbar.economicModel') }}</a></li>
             </ul>
           </li>
@@ -24,12 +24,13 @@
           <li><a class="scroll-bottom" @click="scrollTo('nkn-news-container')">{{ $t('navbar.news') }}</a></li>
           <li>
             <div class="dropdown nkn-language-switch">
-              <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <button class="btn dropdown-toggle" type="button" id="lan-switch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <img class="nkn-language-switch-icon" src="./../assets/nav/language.png"/>
                 {{ $t('navbar.language') }}
-                <span class="caret"></span>
+                <!--<span class="caret"></span>-->
               </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li v-for="(r, i) in urlList.homeURIList"><a @click="changeLocale(i, r.path, r.showTwitter)">{{ r.text }}</a></li>
+              <ul class="dropdown-menu" aria-labelledby="lan-switch">
+                <li class="nkn-language-item" v-for="(r, i) in urlList.homeURIList"><a @click="changeLocale(i, r.path, r.showTwitter)">{{ r.text }}</a></li>
               </ul>
             </div>
           </li>
@@ -40,9 +41,11 @@
         <ul class="nav navbar-nav navbar-right narbar-min">
           <li class="dropdown li-bars-style">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-               aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></a>
+               aria-haspopup="true" aria-expanded="false">
+              <img class="nkn-language-switch-icon-xs" src="./../assets/nav/language.png"/>
+            </a>
             <ul class="dropdown-menu">
-              <li><a @click="changeLocale">{{ $t('navbar.language') }}</a></li>
+              <li class="nkn-language-item" v-for="(r, i) in urlList.homeURIList"><a @click="changeLocale(i, r.path, r.showTwitter)">{{ r.text }}</a></li>
             </ul>
           </li>
         </ul>
@@ -61,10 +64,12 @@
           introductionEn: process.env.DOC_URL + 'NKN_Introduction_en.pdf',
           introductionCn: process.env.DOC_URL + 'NKN_Introduction_cn.pdf',
           whitePaper: process.env.DOC_URL + 'NKN_Whitepaper.pdf',
+          whitePaperJP: process.env.DOC_URL + 'NKN_Whitepaper_jp.pdf',
           economicModel: process.env.DOC_URL + 'NKN_Economic_Model.pdf',
           homeURIList: {
             'zhHome': {path: '/zh/',  text: "中文", showTwitter: false},
             'enHome': {path: '/en/', text: "English", showTwitter: true},
+            'jpHome': {path: '/jp/', text: "日本語", showTwitter: true},
             'krHome': {path: '/kr/', text: "한국어", showTwitter: true},
           }
         }
@@ -74,6 +79,13 @@
       // this.getConfig()
     },
     methods: {
+      getWhitepaperUrl() {
+        if('jp' === this.$i18n.locale) {
+          return this.urlList.whitePaperJP
+        } else {
+          return this.urlList.whitePaper
+        }
+      },
       isHome() {
         return ("Home" === this.$route.name || "Index" === this.$route.name)
       },
@@ -171,13 +183,18 @@
     right: -20px;
     top: 52px;
     z-index: 999;
+    margin-top: -15px;
+    text-align: right;
   }
+
   .li-bars-style > ul > li > a {
     height: 40px;
     line-height: 32px !important;
   }
   .narbar-min > li > a {
     font-size: 27px !important;
+    color: #ffffff !important;
+
   }
 
   .nkn-banner-logo:hover {
@@ -263,5 +280,19 @@
 
   .nkn-language-switch .dropdown-menu {
     min-width: 100px !important;
+  }
+
+  #lan-switch {
+    text-transform: none;
+  }
+
+  .nkn-language-item * {
+    text-transform: none !important;
+  }
+
+  img.nkn-language-switch-icon,
+  img.nkn-language-switch-icon-xs {
+    width: 18px;
+    vertical-align: sub;
   }
 </style>

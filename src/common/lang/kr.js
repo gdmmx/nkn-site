@@ -9,7 +9,7 @@ module.exports = {
     whitepaper: 'NKN 백서',
     economicModel: '경제 모델',
     faq: 'FAQ',
-    language: 'English',
+    language: '언어',
     english: 'English',
     chinese: '中文',
     korean: '한국어',
@@ -110,7 +110,7 @@ module.exports = {
       newsTime1: '2018-02-26',
       newsUrl1: 'https://36kr.com/p/5120836.html',
       newsTit2: 'NKN: 재정의된 “블록체인” 네트워크',
-      newsTxt2: '리옌보 (李彦博)는 Onchain 의 공동창시자로, 다양한 프로젝트 개발 및 관리 경험을 가지고 있다. 그는 Onchain의 블록체인 플랫폼인 DNA (distribute network architecture)의 핵심 설계자 및 개발자 중 한 명이다.',
+      newsTxt2: '리옌보는 Onchain 의 공동창시자로, 다양한 프로젝트 개발 및 관리 경험을 가지고 있다. 그는 Onchain의 블록체인 플랫폼인 DNA (distribute network architecture)의 핵심 설계자 및 개발자 중 한 명이다.',
       newsTime2: '2018-02-02',
       newsUrl2: 'http://www.sohu.com/a/220450794_257855',
       newsTit3: 'NKN프로젝트 월간 보고서 (2018년 5월)',
@@ -122,34 +122,34 @@ module.exports = {
   team: {
     name: '핵심멤버 소개',
     yanBoLi: {
-      name: '리옌보 (李彦博)',
+      name: 'Yanbo Li',
       tit1: '창시자 | 핵심 개발',
       tit2: '전 Onchain 공동 창시자',
       desc1: '블록체인 시스템인 DNA의 핵심 설계와 개발 담당',
-      desc2: '오픈소스 지지자, 리눅스 커널 네트워크 서브시스템 코드 컨트리뷰터 (contributor)',
+      desc2: '오픈소스 지지자, linux 커널 네트워크 서브시스템 코드 컨트리뷰터 (contributor)',
       linkedin: 'https://www.linkedin.com/in/yanbo-li-b478585',
       github: 'https://github.com/dreamfly281'
     },
     bruceZLi: {
-      name: '리정(Zheng “Bruce” Li)',
+      name: 'Bruce Li',
       tit: '공동창시자 | 전략과 혁신',
-      desc1: '구글과 노키아에서 창의적인 네트워크 기술 프로젝트를 담당하고, 담당 프로젝트를 성공적으로 시장에 출시',
+      desc1: 'Google과 Nokia에서 창의적인 네트워크 기술 프로젝트를 담당하고, 담당 프로젝트를 성공적으로 시장에 출시',
       desc2: '네트워크의 새로운 영역 탐험가, 회사전략 및 사업개발 전문가',
       linkedin: 'https://www.linkedin.com/in/zbruceli'
     },
     yiLunZhang: {
-      name: '장이룬 (张逸伦)',
+      name: 'Yilun Zhang',
       tit: '공동창시자 | 핵심 연구와 개발',
       desc1: '캘리포니아대학교 샌디에고 캠퍼스 물리학 박사. 베이징대학교 물리학 학사.',
-      desc2: '셀룰러 오토마타, 이징모델, 분산 정보 처리 (distributed information processing) 영역 전문가. 풀스택 개발자.',
+      desc2: '셀룰러 오토마타(Cellular Automata), 이징모델(Ising Model), 분산 정보 처리 (distributed information processing) 영역 전문가. 풀스택 개발자.',
       linkedin: 'https://www.linkedin.com/in/yilun-zhang-',
       github: 'https://github.com/yilunzhang'
     },
     justinWang: {
-      name: '왕잔창(Justin Wang)',
+      name: 'Justin Wang',
       tit: '공동창시자 | 핵심 연구',
       desc1: '뛰어난 기술 전문가로, 출원되거나 심사중인 국제 특허 45개 보유',
-      desc2: '노키아, 마이크로소프트, 에릭슨 제품 개발 경험 10년 보유',
+      desc2: 'Nokia, Microsoft, Ericsson 제품 개발 경험 10년 보유',
       linkedin: 'https://www.linkedin.com/in/justin-wang-99b36016'
     },
     allenDixon: {
@@ -160,9 +160,9 @@ module.exports = {
       linkedin: 'https://www.linkedin.com/in/dixonal'
     },
     chrisWu: {
-      name: '우치우이 (Chris Wu)',
+      name: 'Chris Wu',
       tit: '사업개발과 운영',
-      desc1: '퀄컴과 아마존의 네트워크 부서에서 10년간 일했고, 사업개발 및 기술 프로젝트 매니저 직무를 맡아, 업계 경험 풍부',
+      desc1: 'Qualcomm과 Amazon의 네트워크 부서에서 10년간 일했고, 사업개발 및 기술 프로젝트 매니저 직무를 맡아, 업계 경험 풍부',
       desc2: '미국, 이스라엘, 인도, 유럽, 중국의 개발팀과 함께 세계에서 선도하는 모바일 프로젝트 지원',
       linkedin: 'https://www.linkedin.com/in/chris-wu-36446846'
     },
@@ -335,7 +335,7 @@ module.exports = {
   },
   navBottom: {
     gotIt: 'Got it',
-    txt: '2018년 5월 28일, NKN은 게이트 거래소에 상장하였고, NKN/USDT, NKN/ETH 거래쌍으로 거래 가능합니다.(<a target="_blank" href="https://gateio.io/article/16464">www.gateio.io</a>)'
+    txt: '2018년 5월 28일, NKN은 게이트 거래소에 상장하였고, NKN/USDT, NKN/ETH 거래쌍으로 거래 가능합니다.(<a target="_blank" href="https://gate.io/article/16464">www.gate.io</a>)'
   },
   copyRight: 'Copyright © 2017-2018 NKN    |    All rights reserved'
 }

@@ -43,7 +43,7 @@
               </a>
             </div>
             <div>
-              <a class="community-area-lg-md-sm-a-24" target="_blank" :href="urlList.whitePaper">
+              <a class="community-area-lg-md-sm-a-24" target="_blank" :href="getWhitepaperUrl()">
                 <span><i class="fa fa-file" aria-hidden="true"></i></span>
                 <span class="community-area-lg-md-sm-name">{{ $t('footer.whitepaper') }}</span>
               </a>
@@ -83,6 +83,29 @@
             </div>
           </div>
 
+          <!--Japanese-->
+          <div v-show="$i18n.locale === 'jp'" class="col-lg-4 col-md-4 col-sm-4 nkn-contact-container">
+            <p class="row nkn-contact-title-jp">{{ $t('footer.contact.content') }}</p>
+            <div class="row">
+              <a class="email-address nkn-email-subscribe-title-jp row pull-right" href="mailto:contact@nkn.org">
+                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <span class="community-area-lg-md-sm-name nkn-email-lg-jp">{{ $t('footer.contact.email') }}</span>
+              </a>
+            </div>
+            <div v-show="emailSubscribeShow[0]" class="form-group div-input-email row">
+              <div class="input-group pull-right nkn-email-subscribe-input-group">
+                <input v-model="emailAddress" type="text" class="form-control input-email" :placeholder="$t('footer.subscribe.placeholder')">
+                <span class="input-group-btn btn-email">
+                  <button @click="subscribeEmail" class="btn btn-default btn-email" type="button">{{ $t('footer.subscribe.btnName') }}</button>
+                </span>
+              </div>
+            </div>
+            <div v-show="!emailSubscribeShow[0]" class="row success-style-jp">{{ $t('footer.subscribe.success') }}</div>
+            <div class="row txt-nkn-events-lg-jp">
+              <p>{{ $t('footer.subscribe.noMiss') }}</p>
+            </div>
+          </div>
+
           <!--korean-->
           <div v-show="$i18n.locale === 'kr'" class="col-lg-4 col-md-4 col-sm-4 nkn-contact-container">
             <p class="row nkn-contact-title-kr">{{ $t('footer.contact.content') }}</p>
@@ -106,7 +129,7 @@
             </div>
           </div>
 
-
+          <!--chinese-->
           <div v-show="$i18n.locale === 'zh'" class="col-lg-4 col-md-4 col-sm-4 nkn-contact-container">
             <p class="row nkn-contact-title">{{ $t('footer.contact.content') }}</p>
             <div class="row">
@@ -164,7 +187,7 @@
             <a v-if="$i18n.locale === 'zh'" class="btn a-footer-introduction" target="_blank" :href="urlList.introductionCn"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> {{ $t('footer.introduction') }}</a>
           </div>
           <div>
-            <a class="btn a-footer-white-paper" target="_blank" :href="urlList.whitePaper"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> {{ $t('footer.whitepaper') }}</a>
+            <a class="btn a-footer-white-paper" target="_blank" :href="getWhitepaperUrl()"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> {{ $t('footer.whitepaper') }}</a>
           </div>
         </div>
 
@@ -202,7 +225,8 @@
         urlList: {
           introductionEn: process.env.DOC_URL + 'NKN_Introduction_en.pdf',
           introductionCn: process.env.DOC_URL + 'NKN_Introduction_cn.pdf',
-          whitePaper: process.env.DOC_URL + 'NKN_Whitepaper.pdf'
+          whitePaper: process.env.DOC_URL + 'NKN_Whitepaper.pdf',
+          whitePaperJP: process.env.DOC_URL + 'NKN_Whitepaper_jp.pdf',
         },
         iconShow: [false],
         emailAddress: '',
@@ -216,6 +240,13 @@
       // let
     },
     methods: {
+      getWhitepaperUrl() {
+        if('jp' === this.$i18n.locale) {
+          return this.urlList.whitePaperJP
+        } else {
+          return this.urlList.whitePaper
+        }
+      },
       logoDownLoad() {
         this.$router.push('/logo/' + this.$i18n.locale)
         this.scrollTop()
@@ -579,4 +610,36 @@
     padding-right: 300px;
   }
   /*end: for english language*/
+
+  /*begin: for japanese language*/
+  .nkn-email-lg-jp {
+    position: inherit !important;
+    padding-right: 118px;
+  }
+
+  .nkn-contact-title-jp {
+    text-align: right;
+    padding-right: 0;
+    margin-right: -20px;
+    margin-left: -8px;
+  }
+
+  .nkn-email-subscribe-title-jp {
+    padding-right: 117px;
+  }
+
+  .success-style-jp {
+    font-size: 18px;
+    color: green;
+    text-align: right;
+    padding-right: 32px;
+  }
+
+  .txt-nkn-events-lg-jp {
+    font-size: 18px;
+    color: #8ea1c6;
+    text-align: right;
+    padding-right: 95px;
+  }
+  /*end: for japanese language*/
 </style>

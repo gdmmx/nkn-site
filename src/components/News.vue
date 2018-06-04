@@ -7,12 +7,12 @@
 
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div v-show="$i18n.locale === 'en'" class="twitter-area">
+          <div v-show="$i18n.locale !== 'zh'" class="twitter-area">
             <a class="twitter-timeline" href="https://twitter.com/NKN_ORG?ref_src=twsrc%5Etfw">{{ $t('media.twitterLoading') }}</a >
           </div>
 
           <!--<div v-if="$i18n.locale === 'zh'" v-for="newI in 3">-->
-          <div v-show="$i18n.locale !== 'en'" class="news-area">
+          <div v-show="$i18n.locale === 'zh'" class="news-area">
             <div v-for="newI in 3">
               <p class="new-tit"><a target="_blank" :href="$t('media.newsCN.newsUrl' + newI)">{{ $t('media.newsCN.newsTit' + newI) }}</a></p>
               <p class="new-time">{{ $t('media.newsCN.newsTime' + newI) }}</p>
