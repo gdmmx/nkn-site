@@ -46,20 +46,26 @@
       </div>
 
       <div class="row hidden-xs">
-        <a v-if="$i18n.locale !== 'zh'" class="a-btn-hover btn-about2 btn-left" target="_blank" :href="urlList.introductionEn">
+        <a v-if="$i18n.locale === 'zh'" class="a-btn-hover btn-about2 btn-left" target="_blank" :href="urlList.introductionCn">
           {{ $t('banner.introduction') }}
         </a>
-        <a v-if="$i18n.locale === 'zh'" class="a-btn-hover btn-about2 btn-left" target="_blank" :href="urlList.introductionCn">
+        <a v-else-if="$i18n.locale === 'kr'" class="a-btn-hover btn-about2 btn-left" target="_blank" :href="urlList.introductionKr">
+          {{ $t('banner.introduction') }}
+        </a>
+        <a v-else class="a-btn-hover btn-about2 btn-left" target="_blank" :href="urlList.introductionEn">
           {{ $t('banner.introduction') }}
         </a>
       </div>
 
       <div class="row hidden-lg hidden-md hidden-sm">
         <div class="col-lg-6 col-md-6 col-sm-6 col-banner-xs-">
-          <a v-if="$i18n.locale !== 'zh'" class="a-btn-hover btn-about2 btn-center" target="_blank" :href="urlList.introductionEn">
+          <a v-if="$i18n.locale === 'zh'" class="a-btn-hover btn-about2 btn-center" target="_blank" :href="urlList.introductionCn">
             {{ $t('banner.introduction') }}
           </a>
-          <a v-if="$i18n.locale === 'zh'" class="a-btn-hover btn-about2 btn-center" target="_blank" :href="urlList.introductionCn">
+          <a v-else-if="$i18n.locale === 'kr'" class="a-btn-hover btn-about2 btn-center" target="_blank" :href="urlList.introductionKr">
+            {{ $t('banner.introduction') }}
+          </a>
+          <a v-else class="a-btn-hover btn-about2 btn-center" target="_blank" :href="urlList.introductionEn">
             {{ $t('banner.introduction') }}
           </a>
         </div>
@@ -78,6 +84,7 @@
       return {
         urlList: {
           introductionEn: process.env.DOC_URL + 'NKN_Introduction_en.pdf',
+          introductionKr: process.env.DOC_URL + 'NKN_Introduction_kr.pdf',
           introductionCn: process.env.DOC_URL + 'NKN_Introduction_cn.pdf'
         },
         countdown: {
@@ -103,23 +110,23 @@
     created() {
     },
     methods: {
-      getConfig() {
-        return this.axios.get(process.env.CONFIG_URL + 'config.json').then(response => {
-          this.urlList.introductionEn = response.data.introduction_en
-          this.urlList.introductionCn = response.data.introduction_cn
-        }).catch(error => {
-          this.urlList.introductionEn = this.$config.introduction_en
-          this.urlList.introductionCn = this.$config.introduction_cn
-        })
-      },
+      // getConfig() {
+      //   return this.axios.get(process.env.CONFIG_URL + 'config.json').then(response => {
+      //     this.urlList.introductionEn = response.data.introduction_en
+      //     this.urlList.introductionCn = response.data.introduction_cn
+      //   }).catch(error => {
+      //     this.urlList.introductionEn = this.$config.introduction_en
+      //     this.urlList.introductionCn = this.$config.introduction_cn
+      //   })
+      // },
       getCountDown() {
-        let target = moment('2018-07-02')
+        let target = moment.utc('2018-06-11 07:00:00')
         let today = moment()
         let duration = moment.duration(target.diff(today))
 
         let days = Math.floor(duration.asDays())
         let hours = duration.hours()
-        let minutes = duration.minutes()
+        let minutes = duration.minutes() + 1
 
         if(days < 0) {
           days = 0

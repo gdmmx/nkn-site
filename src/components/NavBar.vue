@@ -13,8 +13,9 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                 aria-haspopup="true" aria-expanded="false">{{ $t('navbar.docs') }}<span class="caret"></span></a>
             <ul class="dropdown-menu nkn-doc-link">
-              <li><a v-if="$i18n.locale === 'zh'" target="_blank" :href="urlList.introductionCn">{{ $t('navbar.introduction') }}</a></li>
-              <li><a v-if="$i18n.locale !== 'zh'" target="_blank" :href="urlList.introductionEn">{{ $t('navbar.introduction') }}</a></li>
+              <li v-if="$i18n.locale === 'zh'"><a target="_blank" :href="urlList.introductionCn">{{ $t('navbar.introduction') }}</a></li>
+              <li v-else-if="$i18n.locale === 'kr'"><a target="_blank" :href="urlList.introductionKr">{{ $t('navbar.introduction') }}</a></li>
+              <li v-else><a target="_blank" :href="urlList.introductionEn">{{ $t('navbar.introduction') }}</a></li>
               <li><a target="_blank" :href="getWhitepaperUrl()">{{ $t('navbar.whitepaper') }}</a></li>
               <li><a target="_blank" :href="urlList.economicModel">{{ $t('navbar.economicModel') }}</a></li>
             </ul>
@@ -62,6 +63,7 @@
       return {
         urlList: {
           introductionEn: process.env.DOC_URL + 'NKN_Introduction_en.pdf',
+          introductionKr: process.env.DOC_URL + 'NKN_Introduction_kr.pdf',
           introductionCn: process.env.DOC_URL + 'NKN_Introduction_cn.pdf',
           whitePaper: process.env.DOC_URL + 'NKN_Whitepaper.pdf',
           whitePaperJP: process.env.DOC_URL + 'NKN_Whitepaper_jp.pdf',
@@ -76,7 +78,6 @@
       }
     },
     created() {
-      // this.getConfig()
     },
     methods: {
       getWhitepaperUrl() {
@@ -124,19 +125,19 @@
           this.$router.push('/logo' + path)
         }
       },
-      getConfig() {
-        return this.axios.get(process.env.CONFIG_URL + 'config.json').then(response => {
-          this.urlList.introductionEn = response.data.introduction_en
-          this.urlList.introductionCn = response.data.introduction_cn
-          this.urlList.whitePaper = response.data.whitepaper
-          this.urlList.economicModel = response.data.economic_model
-        }).catch(error => {
-          this.urlList.introductionEn = this.$config.introduction_en
-          this.urlList.introductionCn = this.$config.introduction_cn
-          this.urlList.whitePaper = this.$config.whitepaper
-          this.urlList.economicModel = this.$config.economic_model
-        })
-      }
+      // getConfig() {
+      //   return this.axios.get(process.env.CONFIG_URL + 'config.json').then(response => {
+      //     this.urlList.introductionEn = response.data.introduction_en
+      //     this.urlList.introductionCn = response.data.introduction_cn
+      //     this.urlList.whitePaper = response.data.whitepaper
+      //     this.urlList.economicModel = response.data.economic_model
+      //   }).catch(error => {
+      //     this.urlList.introductionEn = this.$config.introduction_en
+      //     this.urlList.introductionCn = this.$config.introduction_cn
+      //     this.urlList.whitePaper = this.$config.whitepaper
+      //     this.urlList.economicModel = this.$config.economic_model
+      //   })
+      // }
     }
   }
 </script>

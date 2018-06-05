@@ -33,11 +33,15 @@
               </a>
             </div>
             <div>
-              <a v-if="$i18n.locale !== 'zh'" class="community-area-lg-md-sm-a-24" target="_blank" :href="urlList.introductionEn">
+              <a v-if="$i18n.locale === 'zh'" class="community-area-lg-md-sm-a-24" target="_blank" :href="urlList.introductionCn">
                 <span><i class="fa fa-file" aria-hidden="true"></i></span>
                 <span class="community-area-lg-md-sm-name">{{ $t('footer.introduction') }}</span>
               </a>
-              <a v-if="$i18n.locale === 'zh'" class="community-area-lg-md-sm-a-24" target="_blank" :href="urlList.introductionCn">
+              <a v-else-if="$i18n.locale === 'kr'" class="community-area-lg-md-sm-a-24" target="_blank" :href="urlList.introductionKr">
+                <span><i class="fa fa-file" aria-hidden="true"></i></span>
+                <span class="community-area-lg-md-sm-name">{{ $t('footer.introduction') }}</span>
+              </a>
+              <a v-else class="community-area-lg-md-sm-a-24" target="_blank" :href="urlList.introductionEn">
                 <span><i class="fa fa-file" aria-hidden="true"></i></span>
                 <span class="community-area-lg-md-sm-name">{{ $t('footer.introduction') }}</span>
               </a>
@@ -183,8 +187,9 @@
           <a target="_blank" href="https://www.reddit.com/r/nknblockchain"><i class="fa fa-reddit-alien" aria-hidden="true"></i></a>
 
           <div>
-            <a v-if="$i18n.locale !== 'zh'" class="btn a-footer-introduction" target="_blank" :href="urlList.introductionEn"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> {{ $t('footer.introduction') }}</a>
             <a v-if="$i18n.locale === 'zh'" class="btn a-footer-introduction" target="_blank" :href="urlList.introductionCn"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> {{ $t('footer.introduction') }}</a>
+            <a v-else-if="$i18n.locale === 'kr'" class="btn a-footer-introduction" target="_blank" :href="urlList.introductionKr"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> {{ $t('footer.introduction') }}</a>
+            <a v-else class="btn a-footer-introduction" target="_blank" :href="urlList.introductionEn"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> {{ $t('footer.introduction') }}</a>
           </div>
           <div>
             <a class="btn a-footer-white-paper" target="_blank" :href="getWhitepaperUrl()"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> {{ $t('footer.whitepaper') }}</a>
@@ -224,6 +229,7 @@
         completed: false,
         urlList: {
           introductionEn: process.env.DOC_URL + 'NKN_Introduction_en.pdf',
+          introductionKr: process.env.DOC_URL + 'NKN_Introduction_cn.pdf',
           introductionCn: process.env.DOC_URL + 'NKN_Introduction_cn.pdf',
           whitePaper: process.env.DOC_URL + 'NKN_Whitepaper.pdf',
           whitePaperJP: process.env.DOC_URL + 'NKN_Whitepaper_jp.pdf',
@@ -254,17 +260,17 @@
       scrollTop() {
         $(window).scrollTop(0)
       },
-      getConfig() {
-        return this.axios.get(process.env.CONFIG_URL + 'config.json').then(response => {
-          this.urlList.introductionEn = response.data.introduction_en
-          this.urlList.introductionCn = response.data.introduction_cn
-          this.urlList.whitePaper = response.data.whitepaper
-        }).catch(error => {
-          this.urlList.introductionEn = this.$config.introduction_en
-          this.urlList.introductionCn = this.$config.introduction_cn
-          this.urlList.whitePaper = this.$config.whitepaper
-        })
-      },
+      // getConfig() {
+      //   return this.axios.get(process.env.CONFIG_URL + 'config.json').then(response => {
+      //     this.urlList.introductionEn = response.data.introduction_en
+      //     this.urlList.introductionCn = response.data.introduction_cn
+      //     this.urlList.whitePaper = response.data.whitepaper
+      //   }).catch(error => {
+      //     this.urlList.introductionEn = this.$config.introduction_en
+      //     this.urlList.introductionCn = this.$config.introduction_cn
+      //     this.urlList.whitePaper = this.$config.whitepaper
+      //   })
+      // },
       enableIcon() {
         this.$set(this.iconShow, 0, true);
       },
